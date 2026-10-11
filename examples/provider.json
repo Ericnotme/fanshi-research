@@ -1,0 +1,7 @@
+{
+  "provider": "mock",
+  "model": "gpt-6-astra",
+  "knowledgeCutoff": "2026-04-30",
+  "maxOutputTokens": 2048,
+  "networkEnabled": false
+}

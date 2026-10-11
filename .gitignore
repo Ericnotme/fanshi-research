@@ -1,0 +1,11 @@
+node_modules/
+runtime/
+.DS_Store
+.env*
+*.pem
+*.key
+*.sqlite*
+.openai/
+evidence/
+*.tar.gz
+dist/*.zip
