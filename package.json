@@ -1,6 +1,6 @@
 {
   "name": "fanshi-research",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "description": "FanShi — bounded offline quantitative research and paper simulation; synthetic evidence only.",

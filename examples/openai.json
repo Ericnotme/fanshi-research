@@ -1,0 +1,15 @@
+{
+  "provider": "openai",
+  "model": "gpt-6-astra",
+  "knowledgeCutoff": "2026-04-30",
+  "maxOutputTokens": 2048,
+  "networkEnabled": true,
+  "reasoningEffort": "low",
+  "timeoutMs": 30000,
+  "maxRetries": 1,
+  "maxAttempts": 2,
+  "maxTotalOutputTokens": 4096,
+  "maxEstimatedCostUsd": 0.50,
+  "inputUsdPerMillion": 10,
+  "outputUsdPerMillion": 50
+}

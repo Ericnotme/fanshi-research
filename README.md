@@ -41,9 +41,17 @@ node src/cli.mjs provider-request examples/provider.json
 
 具体公式、切分边界和限制见 [方法说明](docs/methodology.md)。不计算装饰性的 PBO/DSR 或未经支持的统计显著性。
 
-## Provider：默认 mock，不读密钥
+## Provider：默认 mock，可选服务端 OpenAI
 
-`examples/provider.json` 可配置模型名、知识截止与 token 上限。默认 `mock`，只返回固定候选。`openai-contract-only` 生成符合 Responses API 的严格 JSON Schema 请求，只接受显式注入的测试 transport；仓库没有内置网络 transport、SDK、密钥读取或自动收费路径。不是“填入 key 即可实盘”的产品。
+默认 `mock` 只返回固定候选。`src/openai.mjs` 已实现可运行的服务端 Responses HTTP 适配器：strict 策略 Schema、本地二次验证、固定评价器、超时、有限重试、请求/token/估算费用预算及失败日志。公开网页、默认 CLI 和 MCP 保持离线；付费路径需要单独显式启动。账号权限和真实端到端调用仍未验证。
+
+```sh
+node src/openai-cli.mjs --dry-run examples/openai.json 42
+# 使用者自行在本机环境配置 OPENAI_API_KEY 并接受 API 费用后：
+node src/openai-cli.mjs --allow-paid-api examples/openai.json 42
+```
+
+每次 CLI 默认最多 2 个请求、每次 2,048 个输出 tokens，估算费用准入上限 $0.50。费用预留含失败尝试且不会退回；这是本地估算限制，不是服务商账单硬上限，也不跨进程累积。详情、配置与错误边界见 [OpenAI provider](docs/openai-provider.md)。`openai-contract-only` 保留为兼容的纯契约测试入口，不会调用网络。
 
 可选模型示例为 `gpt-6-astra`，官方知识截止 2026-04-30。[官方模型文档](https://developers.openai.com/api/docs/models/gpt-6-astra) 与 [Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs) 于 2026-10-11 核对。文档当日标准文本价格为输入 $10/百万 tokens、输出 $50/百万 tokens；计费规则和长上下文价格以官方为准。本项目没有运行付费 API；ChatGPT 订阅不应被视为 API 额度。
 

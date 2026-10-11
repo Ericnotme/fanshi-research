@@ -16,10 +16,10 @@ No paid model call, real market dataset, financial account, real order, device c
 
 ## Checked on 2026-10-11
 
-- 24 automated tests passed, 0 failed.
+- 42 automated tests passed, 0 failed, including 18 server-provider test groups with mock HTTP. Coverage includes strict requests, bounded retries/deadlines/response streams/budgets, quota/auth/refusal/invalid output, secret-free errors, concurrency, audit failure, provenance and unchanged local evaluation.
 - 9 browser acceptance groups passed, using Chromium 134 in one isolated headless process. Tested all panels at 320, 390 and 1440px widths with no horizontal document overflow.
 - 0 JavaScript errors and 0 external network requests during offline browser checks.
-- 27 explicitly allowlisted source files passed the final privacy-pattern scan, including branding configuration and release packaging scripts.
+- 32 explicitly allowlisted source files passed the final privacy-pattern scan, including the server adapter, mock-network tests and provider documentation.
 - Desktop and mobile screenshots were visually inspected. Paper ledger and full JSON export were checked.
 - The default seed 42 happens to lose money in the final synthetic segment. It was retained without tuning or hiding the loss.
 

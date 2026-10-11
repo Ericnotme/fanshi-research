@@ -1,5 +1,5 @@
 /** Pure, shared evaluator. No network, dynamic code or account data. */
-export const VERSION = '0.1.0';
+export const VERSION = '0.2.0';
 export const LIMIT = 8;
 export const LOOKBACKS = Object.freeze([5, 10, 20, 40]);
 export const KINDS = Object.freeze(['momentum', 'mean_reversion']);
@@ -134,7 +134,7 @@ export function rollingOrigin(bars, list, costs) {
 }
 export async function runResearch({seed=42,costs={feeBps:5,slippageBps:3},list=candidates(),createdAt=new Date().toISOString(),provider='mock'}={}) {
   validateCosts(costs); list=validateCandidates(list);
-  invariant(provider==='mock'||provider==='openai-contract-only', 'Unknown provider provenance');
+  invariant(['mock','openai-contract-only','openai'].includes(provider), 'Unknown provider provenance');
   invariant(!Number.isNaN(Date.parse(createdAt)), 'Invalid freeze time');
   const data=syntheticData(seed), development=developmentEvaluation(data.bars,list,costs);
   const protocol={engine:VERSION,dataSource:'synthetic',seed,bars:data.bars.length,candidates:list,costs,split:development.split,signalLagBars:2,selection:'train_top3_then_positive_validation_drawdown_lte_20_then_net_minus_half_drawdown',maxCandidates:LIMIT,provider};
