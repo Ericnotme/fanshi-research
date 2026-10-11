@@ -1,10 +1,10 @@
-# 守盈
+# 见潮
 
 **开源量化研究与模拟助手**
 
 把投资观点变成 **可核验假设 → 成本与风险检验 → 冻结策略 → 模拟追踪计划** 的开源研究工具。愿景是降低财富管理中研究、验证和风险检查的成本；目前交付的是可复现的离线合成演示，不是已验证的投资方法或持牌投顾服务。
 
-“守盈”是项目名称，不代表保本、保收益或已经验证的投资表现。
+“见潮”是项目名称，不代表保本、保收益或已经验证的投资表现。
 
 **所有收益数字都来自合成数据。真实收益、真实用户节时效果、真实模型 API 和真机适配均未验证。** 前瞻状态始终为 `prospective-pending`，观测数为 0。
 
@@ -79,6 +79,6 @@ node src/openai-cli.mjs --allow-paid-api examples/openai.json 42
 
 ## 名称与历史
 
-守盈是当前新研究与模拟项目，曾用名饭式（FanShi）；机器人昵称保留“饭宝”。2022 年历史项目的名字与叙述保持原样，任何历史结果都不属于本项目的验证证据。问据（原 Signal Desk）和几分（原投资尺子）是不同工具。
+见潮是当前新研究与模拟项目，曾用名守盈、饭式（FanShi）；机器人昵称保留“饭宝”。2022 年历史项目的名字与叙述保持原样，任何历史结果都不属于本项目的验证证据。问据（原 Signal Desk）和几分（原投资尺子）是不同工具。
 
 [公开演示](https://strategy-lab.weijiaxian.chatgpt.site/) · [GitHub 源码](https://github.com/Ericnotme/fanshi-research) · [源码 ZIP](https://strategy-lab.weijiaxian.chatgpt.site/fanshi-research-source.zip)。演示保留原 URL。
