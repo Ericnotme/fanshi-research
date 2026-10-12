@@ -1,6 +1,12 @@
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 const core=await readFile('src/core.mjs','utf8'),phone=await readFile('src/phone.mjs','utf8'),app=await readFile('web/app.mjs','utf8');
-const bundle=[core,phone,app].map(x=>x.replace(/^import .*;\n/gm,'').replace(/^export /gm,'')).join('\n');
+const evidence=await readFile('src/evidence.mjs','utf8'),evidenceApp=await readFile('web/evidence-app.mjs','utf8');
+const provenance=await readFile('src/synthetic-provenance.mjs','utf8');
+const fixture=JSON.parse(await readFile('examples/evidence.json','utf8'));
+const publicCase=JSON.parse(await readFile('examples/public-phone-pricing.json','utf8'));
+const publicApp=await readFile('web/public-research-app.mjs','utf8');
+const bundle=[core,phone,provenance,evidence,`const EVIDENCE_EXAMPLE=${JSON.stringify(fixture)};`,
+  `const PUBLIC_RESEARCH_CASE=${JSON.stringify(publicCase)};`,app,evidenceApp,publicApp].map(x=>x.replace(/^import .*;\n/gm,'').replace(/^export /gm,'')).join('\n');
 if(/<\/script/i.test(bundle))throw Error('Unsafe inline script terminator');
 const brand=JSON.parse(await readFile('branding.json','utf8'));
 if(Object.keys(brand).sort().join(',')!=='localizedName,projectName,releaseState,wordmark')throw Error('Invalid branding fields');

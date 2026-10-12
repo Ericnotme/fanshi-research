@@ -1,0 +1,244 @@
+{
+  "claim": {
+    "id": "cloud-revenue-q2",
+    "version": 1,
+    "confirmation": "human_confirmed",
+    "thesis": "合成公司晨岚的项目进展是否已经兑现为第二季度收入？",
+    "entity": "synthetic-chenlan",
+    "metric": "quarter-total",
+    "stage": "recognized_revenue",
+    "periodStart": "2026-04-01T00:00:00.000Z",
+    "periodEnd": "2026-06-30T23:59:59.999Z",
+    "operator": "gte",
+    "threshold": 100,
+    "unit": "cny-10k",
+    "falsification": "完整季度确认收入低于100万元则不成立；只有签约、下界或缺失值时不能否证。"
+  },
+  "dataset": {
+    "schemaVersion": 2,
+    "id": "synthetic-source-removal",
+    "version": 2,
+    "kind": "synthetic",
+    "sources": [
+      {
+        "id": "issuer",
+        "originId": "issuer-report",
+        "title": "合成季度报告（首发）",
+        "visibility": "public",
+        "url": "https://example.invalid/issuer/q2",
+        "provenanceId": "e509d945e74b545858724b4d113819697e19c59e73450eaf08df7cf89b23598b"
+      },
+      {
+        "id": "repost",
+        "originId": "issuer-report",
+        "title": "同一报告的合成转载",
+        "visibility": "public",
+        "url": "https://example.invalid/repost/q2",
+        "provenanceId": "796d9364f66cd67bfe981017c7da3aa8f6b06da80524773423a0f3e218039a68"
+      },
+      {
+        "id": "contract",
+        "originId": "contract-notice",
+        "title": "合成签约公告",
+        "visibility": "public",
+        "url": "https://example.invalid/contract/q2",
+        "provenanceId": "39407de241bbbd4a0b199d506ef46b08c45de3c3933b602909ef4ca407256ab6"
+      },
+      {
+        "id": "private-note",
+        "originId": "synthetic-note",
+        "title": "合成内部核对记录（无真人聊天）",
+        "visibility": "private",
+        "url": null,
+        "provenanceId": "ac694bf88ed61036004087e6c0fb8461c1404619fd58a0995bb17a3090a0389c"
+      },
+      {
+        "id": "untimed",
+        "originId": "untimed-clipping",
+        "title": "缺少可得时间的合成摘录",
+        "visibility": "public",
+        "url": null,
+        "provenanceId": "5d3841e15a5770db640630ad0976ba638f8243a8e0f2805f4e75ea93104e2917"
+      },
+      {
+        "id": "later",
+        "originId": "later-correction",
+        "title": "观察截止日之后的合成更正",
+        "visibility": "public",
+        "url": "https://example.invalid/later/q2",
+        "provenanceId": "cdc8d42739c8ff39bc846d28e9f139538367512f84c089f1fbebe3d35f0fbaf8"
+      }
+    ],
+    "observations": [
+      {
+        "entity": "synthetic-chenlan",
+        "metric": "quarter-total",
+        "stage": "recognized_revenue",
+        "periodStart": "2026-04-01T00:00:00.000Z",
+        "periodEnd": "2026-06-30T23:59:59.999Z",
+        "unit": "cny-10k",
+        "sourceVersion": 1,
+        "confirmation": "human_confirmed",
+        "coverage": "complete",
+        "occurredAt": "2026-06-30T23:59:59.999Z",
+        "publishedAt": "2026-07-05T08:00:00.000Z",
+        "availableAt": "2026-07-05T08:10:00.000Z",
+        "id": "revenue-original",
+        "sourceId": "issuer",
+        "value": 120,
+        "excerpt": "【合成样例】第二季度确认收入合计120万元。"
+      },
+      {
+        "entity": "synthetic-chenlan",
+        "metric": "quarter-total",
+        "stage": "recognized_revenue",
+        "periodStart": "2026-04-01T00:00:00.000Z",
+        "periodEnd": "2026-06-30T23:59:59.999Z",
+        "unit": "cny-10k",
+        "sourceVersion": 1,
+        "confirmation": "human_confirmed",
+        "coverage": "complete",
+        "occurredAt": "2026-06-30T23:59:59.999Z",
+        "publishedAt": "2026-07-05T08:00:00.000Z",
+        "availableAt": "2026-07-05T08:10:00.000Z",
+        "id": "revenue-repost",
+        "sourceId": "repost",
+        "value": 120,
+        "excerpt": "【合成转载】引用季度报告：确认收入120万元。"
+      },
+      {
+        "entity": "synthetic-chenlan",
+        "metric": "quarter-total",
+        "stage": "signed",
+        "periodStart": "2026-04-01T00:00:00.000Z",
+        "periodEnd": "2026-06-30T23:59:59.999Z",
+        "unit": "cny-10k",
+        "sourceVersion": 1,
+        "confirmation": "human_confirmed",
+        "coverage": "complete",
+        "occurredAt": "2026-06-30T23:59:59.999Z",
+        "publishedAt": "2026-07-05T08:00:00.000Z",
+        "availableAt": "2026-07-05T08:10:00.000Z",
+        "id": "contract-amount",
+        "sourceId": "contract",
+        "value": 180,
+        "excerpt": "【合成样例】第二季度签約总额180万元，不代表已确认收入。"
+      },
+      {
+        "entity": "synthetic-chenlan",
+        "metric": "quarter-total",
+        "stage": "recognized_revenue",
+        "periodStart": "2026-04-01T00:00:00.000Z",
+        "periodEnd": "2026-06-30T23:59:59.999Z",
+        "unit": "cny-10k",
+        "sourceVersion": 1,
+        "confirmation": "human_confirmed",
+        "coverage": "complete",
+        "occurredAt": "2026-06-30T23:59:59.999Z",
+        "publishedAt": "2026-07-08T08:00:00.000Z",
+        "availableAt": "2026-07-08T08:10:00.000Z",
+        "id": "revenue-conflict",
+        "sourceId": "private-note",
+        "value": 70,
+        "excerpt": "【合成非公开记录】第二季度完整确认收入合计70万元；与报告口径冲突，尚未核实。"
+      },
+      {
+        "entity": "synthetic-chenlan",
+        "metric": "quarter-total",
+        "stage": "recognized_revenue",
+        "periodStart": "2026-04-01T00:00:00.000Z",
+        "periodEnd": "2026-06-30T23:59:59.999Z",
+        "unit": "cny-10k",
+        "sourceVersion": 1,
+        "confirmation": "human_confirmed",
+        "coverage": "complete",
+        "occurredAt": "2026-06-30T23:59:59.999Z",
+        "publishedAt": "2026-07-05T08:00:00.000Z",
+        "availableAt": null,
+        "id": "revenue-untimed",
+        "sourceId": "untimed",
+        "value": 150,
+        "excerpt": "【合成摘录】声称收入150万元，但首次可得时间不明。"
+      },
+      {
+        "entity": "synthetic-chenlan",
+        "metric": "quarter-total",
+        "stage": "recognized_revenue",
+        "periodStart": "2026-04-01T00:00:00.000Z",
+        "periodEnd": "2026-06-30T23:59:59.999Z",
+        "unit": "cny-10k",
+        "sourceVersion": 1,
+        "confirmation": "human_confirmed",
+        "coverage": "complete",
+        "occurredAt": "2026-06-30T23:59:59.999Z",
+        "publishedAt": "2026-07-15T08:00:00.000Z",
+        "availableAt": "2026-07-15T08:10:00.000Z",
+        "id": "revenue-future",
+        "sourceId": "later",
+        "value": 80,
+        "excerpt": "【合成更正】7月15日声称季度收入80万元，不能回填到7月10日的判断。"
+      }
+    ],
+    "provenance": [
+      {
+        "id": "e509d945e74b545858724b4d113819697e19c59e73450eaf08df7cf89b23598b",
+        "kind": "primary",
+        "parentId": null,
+        "originId": "issuer-report",
+        "visibility": "public",
+        "url": "https://example.invalid/issuer/q2"
+      },
+      {
+        "id": "796d9364f66cd67bfe981017c7da3aa8f6b06da80524773423a0f3e218039a68",
+        "kind": "repost",
+        "parentId": "e509d945e74b545858724b4d113819697e19c59e73450eaf08df7cf89b23598b",
+        "originId": null,
+        "visibility": "public",
+        "url": "https://example.invalid/repost/q2"
+      },
+      {
+        "id": "39407de241bbbd4a0b199d506ef46b08c45de3c3933b602909ef4ca407256ab6",
+        "kind": "primary",
+        "parentId": null,
+        "originId": "contract-notice",
+        "visibility": "public",
+        "url": "https://example.invalid/contract/q2"
+      },
+      {
+        "id": "ac694bf88ed61036004087e6c0fb8461c1404619fd58a0995bb17a3090a0389c",
+        "kind": "primary",
+        "parentId": null,
+        "originId": "synthetic-note",
+        "visibility": "private",
+        "url": null
+      },
+      {
+        "id": "5d3841e15a5770db640630ad0976ba638f8243a8e0f2805f4e75ea93104e2917",
+        "kind": "primary",
+        "parentId": null,
+        "originId": "untimed-clipping",
+        "visibility": "public",
+        "url": null
+      },
+      {
+        "id": "cdc8d42739c8ff39bc846d28e9f139538367512f84c089f1fbebe3d35f0fbaf8",
+        "kind": "primary",
+        "parentId": null,
+        "originId": "later-correction",
+        "visibility": "public",
+        "url": "https://example.invalid/later/q2"
+      },
+      {
+        "id": "729952979889efa033d0035962cdade039f692d26548ec5b9529e75a97375155",
+        "kind": "primary",
+        "parentId": null,
+        "originId": "independent-audit",
+        "visibility": "public",
+        "url": "https://example.invalid/independent/q2"
+      }
+    ]
+  },
+  "asOf": "2026-07-10T12:00:00.000Z",
+  "visibility": "public",
+  "excludedOrigins": []
+}
