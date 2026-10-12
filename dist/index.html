@@ -1,13 +1,46 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="见潮 开源量化研究与模拟助手：将投资观点变成可核验假设、成本与风险检验、冻结策略和模拟追踪。开源离线合成演示。"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>见潮 · 开源量化研究与模拟助手</title><style>:root{color-scheme:light;--paper:#f5f4f0;--ink:#202722;--muted:#737a74;--line:#dfe2d9;--accent:#ca5935;--green:#557762}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}a:hover{text-decoration:underline}button,input{font:inherit}button,a,input{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #d77a49;outline-offset:4px}header,main,footer{max-width:1320px;margin:auto}header{height:106px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:0 30px}.brand{display:flex;align-items:center;gap:16px;letter-spacing:.15em;font-weight:700;font-size:14px}.brand-mark{display:grid;grid-auto-flow:column;align-items:center;font-size:29px;letter-spacing:-3px;width:55px}.brand-mark span{color:var(--accent);font-weight:400}.brand small{display:block;font-size:9px;letter-spacing:.16em;font-weight:400;color:var(--muted);margin-top:1px}nav{display:flex;gap:28px;font-size:13px}main{padding:0 30px}.hero{display:flex;justify-content:space-between;gap:50px;padding:64px 0 46px}.eyebrow,.step-label{font-size:10px;font-weight:650;letter-spacing:.15em;margin:0 0 18px;color:var(--muted)}.eyebrow{display:flex;align-items:center;gap:9px}.dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}h1{font-size:clamp(36px,4vw,55px);line-height:1.34;letter-spacing:-.035em;margin:0;font-weight:620}h1 span{color:var(--accent)}h2{font-size:25px;line-height:1.4;margin:0;letter-spacing:-.03em}h3{font-size:17px;line-height:1.5;margin:0 0 12px;font-weight:600}.intro{color:var(--muted);margin:24px 0 0;font-size:15px}.hero-note{width:240px;padding:22px 0 0 30px;border-left:1px solid var(--line);align-self:center}.mono{font:10px ui-monospace,SFMono-Regular,monospace;letter-spacing:.1em;color:var(--muted)}.hero-note p{font-size:19px;line-height:1.8;letter-spacing:.025em}.hero-note small{display:block;font-size:11px;color:var(--muted);margin-top:17px}.tag{display:inline-flex;padding:4px 9px;background:#e9ece3;border-radius:3px;font-size:11px;color:#5b6858}.notice{padding:13px 18px;display:flex;gap:18px;background:#efeee7;border:1px solid #e4e1d5;border-radius:5px;font-size:12px;color:#787769}.notice strong{font-weight:600;color:#66694e}.tabs{display:flex;gap:34px;border-bottom:1px solid var(--line);margin:38px 0}.tabs button{font-size:13px;background:none;border:none;border-bottom:2px solid transparent;white-space:nowrap;padding:0 0 15px;color:var(--muted);cursor:pointer}.tabs button[aria-selected=true]{border-color:var(--accent);color:var(--ink)}.section-head{display:flex;justify-content:space-between;align-items:center;gap:20px;margin:0 0 24px}.section-head .eyebrow{margin-bottom:6px}.status{font-size:11px;color:var(--green)}.work-grid{display:grid;grid-template-columns:290px minmax(0,1fr);gap:24px}.card{background:#fffefa;border:1px solid var(--line);border-radius:7px;padding:22px}.config{align-self:start}.muted{color:var(--muted);font-size:13px}.config .muted{line-height:1.8}.step-label{margin-bottom:10px;font-size:10px}label{display:block;font-size:12px;margin:22px 0 7px;color:#4f594f}label span{font-size:10px;color:var(--muted)}input{background:#fffefa;border:1px solid #d6dcd1;border-radius:4px;padding:9px 11px;width:100%;color:var(--ink);min-width:0}input:hover{border-color:#849780}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.hint{color:#8a9086;font-size:11px;line-height:1.8}.primary{display:flex;justify-content:space-between;align-items:center;width:100%;margin-top:24px;border:0;border-radius:4px;background:#2e4035;color:white;font-size:13px;padding:12px 15px;cursor:pointer}.primary:hover{background:#435849}.primary:disabled{opacity:.5;cursor:wait}.rule-box{border-top:1px solid var(--line);margin-top:27px;padding-top:20px;font-size:11px;color:var(--muted)}.rule-box strong{font-size:12px;color:#56624f}.rule-box p{line-height:1.8}.rule-box small{font-size:10px}.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.metric{padding:18px}.metric span{font-size:10px;color:#7c8379;display:block}.metric strong{font-size:29px;font-weight:500;letter-spacing:-.04em;display:block;margin:10px 0 6px}.metric small{color:#8d9389;font-size:9px;display:block}.chart-card{margin-top:18px}.chart-top{display:flex;justify-content:space-between;align-items:center;gap:15px}.legend{display:flex;gap:20px;font-size:10px;color:var(--muted);white-space:nowrap}.legend i{display:inline-block;width:15px;height:2px;background:var(--accent);vertical-align:middle;margin-right:5px}.legend i.baseline{background:#a7b5a7}svg{display:block;width:100%;height:auto;margin:22px 0 4px;overflow:visible}.chart-bottom{display:flex;justify-content:space-between;color:var(--muted);font:10px ui-monospace,monospace}.split-bar{display:flex;height:31px;margin-top:25px;gap:4px;font-size:10px;color:#717a6c}.split-bar span{background:#e3e8df;padding:6px 10px;width:25%}.split-bar span:first-child{width:50%;background:#e8eadf}.split-bar span:last-child{background:#f1e4d9;color:#a1684f}.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.proof-grid h3{font-size:17px}.proof-grid .muted{font-size:11px}.proof-grid small{font-size:10px;color:var(--muted)}.pending{background:#f0f2eb}.wide{margin-top:24px;padding:26px}.wide .section-head{margin-bottom:10px}.secondary{background:none;border:1px solid var(--line);padding:8px 12px;border-radius:4px;font-size:11px;cursor:pointer}.secondary:hover{border-color:var(--accent)}.table-scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;text-align:left;font-size:12px}th{font-weight:400;font-size:10px;letter-spacing:.035em;color:#8b9285;padding:13px 10px;border-bottom:1px solid var(--line);white-space:nowrap}td{padding:13px 10px;border-bottom:1px solid #eeefe9;white-space:nowrap}tbody tr:last-child td{border-bottom:0}.picked{color:var(--accent)}.two-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.mini-row{display:flex;justify-content:space-between;gap:18px;border-bottom:1px solid #eeefe9;padding:11px 0;font-size:12px}.mini-row:last-child{border-bottom:0}.mini-row span{color:var(--muted)}.wide>small{display:block;font-size:10px;color:var(--muted);margin-top:16px}.freeze dl{font:11px/1.7 ui-monospace,monospace;display:grid;grid-template-columns:125px minmax(0,1fr);gap:5px 18px}.freeze dt{color:var(--muted)}.freeze dd{margin:0;overflow-wrap:anywhere}ul{padding-left:20px;font-size:13px;color:var(--muted);line-height:2.2}pre{font:10px/1.8 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--muted);background:#f5f5ef;padding:15px;border-radius:4px}.journal-item{display:flex;justify-content:space-between;gap:20px;margin-top:12px}.journal-item p{margin:5px 0}.journal-item strong{font-size:14px}.journal-item small{font-size:11px;color:var(--muted)}#message{font-size:12px;color:var(--accent);margin:22px 0;min-height:20px}footer{border-top:1px solid var(--line);padding:30px;display:flex;gap:20px;justify-content:space-between;color:var(--muted);font-size:10px}footer b{color:var(--accent);margin:0 5px}[hidden]{display:none!important}@media(max-width:1000px){.work-grid{grid-template-columns:250px minmax(0,1fr)}.metric-grid{gap:8px}.metric{padding:13px}.metric strong{font-size:24px}.legend{gap:10px;font-size:9px}.chart-top{display:block}.hero-note{width:210px}.two-grid{gap:18px}}@media(max-width:760px){header{height:85px;padding:0 20px}.brand{font-size:11px;gap:10px}.brand small{font-size:7px}.brand-mark{font-size:24px;width:42px}nav{font-size:10px;gap:13px}main{padding:0 20px}.hero{padding:38px 0 27px;gap:20px}.hero-note{display:none}.intro{font-size:12px;margin-top:19px}.notice{display:block;font-size:11px;padding:13px}.notice strong{display:block;margin-bottom:5px}.tabs{gap:22px;overflow:auto;margin:28px 0;scrollbar-width:thin}.tabs button{font-size:11px}.work-grid,.two-grid{grid-template-columns:1fr;gap:0}.config{margin-bottom:18px}.rule-box{margin-top:20px}.metric-grid{gap:8px}.metric{padding:12px}.metric span{font-size:9px}.metric strong{font-size:23px}.metric small{font-size:8px}.chart-card{padding:17px}.section-head{align-items:flex-start;gap:12px}.status{font-size:9px;text-align:right;max-width:125px}.section-head h2{font-size:21px}.proof-grid{gap:10px}.proof-grid .card{padding:17px}.proof-grid h3{font-size:15px}.wide{padding:18px;margin-top:18px}.wide .section-head{display:block}.secondary{margin:8px 0}.freeze dl{grid-template-columns:1fr;gap:2px}.freeze dd{margin-bottom:10px}.journal-item{display:block}.desktop{display:none}footer{padding:22px 20px;display:block}footer>span,footer>a{display:block;margin-bottom:8px}}
+
+/* Evidence workspace shares the existing app; no network or external assets. */
+#public-research a{color:var(--green);text-decoration:underline;overflow-wrap:anywhere}#public-research p{overflow-wrap:anywhere}.tabs{overflow-x:auto}
+textarea,select{font:inherit;width:100%;min-width:0;color:var(--ink);background:#fffefa;border:1px solid #d6dcd1;border-radius:4px;padding:9px 11px}textarea{resize:vertical}textarea:focus-visible,select:focus-visible{outline:3px solid #d77a49;outline-offset:3px}.ev-layout{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:24px}.ev-layout>div{min-width:0}.ev-rule{background:#f0f2eb;padding:14px;font-size:12px;line-height:1.8;border-radius:4px}.ev-source{display:flex;align-items:flex-start;gap:10px;padding:12px 0;margin:0;border-top:1px solid var(--line);cursor:pointer}.ev-source input{width:17px;flex:none;margin:4px 0;accent-color:var(--green)}.ev-source strong{font-size:12px;display:block}.ev-source small{font-size:10px;display:block;color:var(--muted)}.ev-result{border-top:3px solid var(--green)}.ev-result-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.ev-result-grid span{display:block;font-size:11px;color:var(--muted)}.ev-result-grid strong{display:block;font-size:34px;font-weight:500;margin:12px 0}.ev-result-grid strong[data-status="unknown"]{color:#996923}.ev-result-grid strong[data-status="refuted"]{color:#ac4c32}.ev-conflict{font-size:12px;background:#fbefdf;padding:12px;overflow-wrap:anywhere}.ev-evidence{border-top:1px solid var(--line);padding:18px 0}.ev-evidence .section-head{gap:10px;margin:0}.ev-evidence strong{font-size:13px}.ev-evidence p{font-size:12px}.ev-evidence summary{font-size:11px;color:var(--muted);cursor:pointer}#ev-error{color:#ac4c32;font-size:13px}.secondary:disabled{opacity:.45;cursor:default}.hero h1{font-size:clamp(32px,3.7vw,50px)}@media(max-width:800px){.ev-layout{grid-template-columns:1fr;gap:20px}.ev-evidence .section-head{display:block}.ev-layout .card{padding:18px}.ev-layout .form-row{grid-template-columns:1fr}.ev-result-grid strong{font-size:30px}}
 </style></head>
 <body>
 <header><a class="brand" href="#research"><span class="brand-mark" aria-hidden="true">见</span><span>见潮<small>开源量化研究与模拟助手</small></span></a><nav><a href="https://github.com/Ericnotme/fanshi-research">GitHub ↗</a><a id="source-link" href="./fanshi-research-source.zip" download>源码 ↓</a></nav></header>
 <main>
-<section class="hero"><div><p class="eyebrow"><span class="dot"></span> RESEARCH BEFORE CONVICTION</p><h1>让投资观点，<br>先经得起<span>检验。</span></h1><p class="intro">从一个可核验的假设开始。计入成本，检查回撤，冻结规则，<br class="desktop">再等待真实世界给出答案。</p></div><aside class="hero-note"><div class="mono">EXPERIMENT / 001</div><p>观点 → 假设 → 检验<br>冻结 → 模拟追踪</p><span class="tag">离线合成演示</span><small>目标是降低研究与验证的成本。<br>真实投资表现与节时效果尚未验证。</small></aside></section>
-<div class="notice"><strong>合成数据 · 非投资建议</strong><span>所有曲线都来自可复现的人工价格路径，不代表现实可交易结果。“见潮”仅为项目名称，不代表保本或收益承诺。</span></div>
-<div class="tabs" role="tablist" aria-label="见潮页面"><button role="tab" aria-selected="true" data-tab="research">01 研究工作台</button><button role="tab" aria-selected="false" data-tab="journal">02 实验日志</button><button role="tab" aria-selected="false" data-tab="prize">03 固定奖池</button><button role="tab" aria-selected="false" data-tab="boundaries">04 能力边界</button></div>
-<section id="research" class="panel">
+<section class="hero"><div><p class="eyebrow"><span class="dot"></span> RESEARCH BEFORE CONVICTION</p><h1>删掉这条消息，<br>你的投资结论<span>还成立吗？</span></h1><p class="intro">先说清命题、指标、期限和否证条件。再关掉一个来源，<br class="desktop">看看结论为什么改变，以及什么仍然不知道。</p></div><aside class="hero-note"><div class="mono">EXPERIMENT / 001</div><p>命题 → 证据 → 检查<br>删减 → 解释 → 复核</p><span class="tag">离线合成演示</span><small>目标是降低研究与验证的成本。<br>真实投资表现与节时效果尚未验证。</small></aside></section>
+<div class="notice"><strong>可复核研究 · 非投资建议</strong><span>来源删减与策略实验使用合成数据；公开研究示例单独引用原始披露，不参与模拟收益计算。“见潮”仅为项目名称，不代表保本或收益承诺。</span></div>
+<div class="tabs" role="tablist" aria-label="见潮页面"><button role="tab" aria-selected="true" data-tab="evidence">00 来源删减检查</button><button role="tab" aria-selected="false" data-tab="public-research">公开研究示例</button><button role="tab" aria-selected="false" data-tab="research">01 合成策略实验</button><button role="tab" aria-selected="false" data-tab="journal">02 实验日志</button><button role="tab" aria-selected="false" data-tab="prize">03 固定奖池</button><button role="tab" aria-selected="false" data-tab="boundaries">04 能力边界</button></div>
+<section id="evidence" class="panel">
+<div class="section-head"><div><p class="eyebrow">ONE CLAIM · TRACEABLE EVIDENCE</p><h2>把结论拆成能复核的一步</h2></div><span class="tag">纯合成样例 · 无需账号或密钥</span></div>
+<p class="muted">本页检查一个人工确认的数值命题。来源删减反映结论对资料的依赖，不是严格因果归因，也不预测收益或证明 alpha。示例公司、消息及非公开记录全部虚构。</p>
+<div class="ev-layout"><div>
+<article class="card"><p class="step-label">01 / 明确命题</p><form id="ev-form">
+<label for="ev-thesis">你的投资论点</label><textarea id="ev-thesis" maxlength="500" rows="3" required></textarea>
+<p class="hint">文字不会自动变成事实。请用下方规则表达它，并由你确认；首版只演示内置合成公司及季度总额，未连接模型解析。</p>
+<label for="ev-stage">分开检验的业务阶段</label><select id="ev-stage"><option value="adoption">采用</option><option value="signed">签约</option><option value="accepted">验收</option><option value="recognized_revenue">确认收入</option><option value="cash_received">回款</option></select>
+<div class="form-row"><div><label for="ev-start">期间开始（UTC）</label><input id="ev-start" type="date" required></div><div><label for="ev-end">截止期限（UTC）</label><input id="ev-end" type="date" required></div></div>
+<label for="ev-threshold">合成公司季度总额 ≥（万元）</label><input id="ev-threshold" type="number" min="0" max="1000000000000" step="any" required>
+<p class="ev-rule" id="ev-rule"></p><p class="hint" id="ev-confirmation"></p>
+<button class="primary" id="ev-confirm" type="submit">我确认这个命题和否证条件，开始检查</button></form><button class="secondary" id="ev-reset">恢复合成样例</button></article>
+<article class="card wide"><p class="step-label">02 / 改变资料范围</p><label for="ev-visibility">哪些来源参与判断</label><select id="ev-visibility"><option value="public">仅公开样例</option><option value="all">全部合成样例（含非公开模拟记录）</option></select>
+<label for="ev-asof">当时能知道什么：观察截止（UTC）</label><input id="ev-asof" type="datetime-local" step="60" required>
+<p class="hint">取消勾选即删除已核验合成根源及其转述。AI／转载仅供追溯；人工确认不能使它们成为独立支持。时间缺失、父链断裂或根源未登记时排除。合成登记和哈希不证明真实世界来源可信。</p><div id="ev-sources"></div></article>
+</div><div>
+<article class="card ev-result" aria-live="polite"><p class="step-label">03 / 同一命题、同一时点的对照</p><div class="ev-result-grid"><div><span>当前范围 · 删除前</span><strong id="ev-baseline-status">—</strong></div><div><span>当前范围 · 删除后</span><strong id="ev-current-status">未知</strong></div></div><p id="ev-reason"></p><p class="muted" id="ev-change"></p><p class="hint" id="ev-scope"></p><div id="ev-conflicts"></div><p class="hint">“成立”仅表示当前纳入证据满足这条人工规则；不等于证据已被外部核实或投资会获利。未知不会被填为 0。</p><button class="secondary" id="ev-export" disabled>导出复核包 JSON ↓</button><p class="hint" id="ev-history"></p></article>
+<article class="card wide"><p class="step-label">04 / 逐条追溯</p><h3>被使用和被排除的资料都留下来</h3><div id="ev-trace"></div></article>
+<details class="card wide"><summary>查看版本与输入、规则、结果指纹</summary><pre id="ev-hashes"></pre><p class="hint">本地 hash 用于复现和检查一致性，不是第三方时间戳。更正只从当时首次可得的时点生效。</p></details>
+</div></div><p id="ev-error" role="alert"></p>
+</section>
+<section id="public-research" class="panel" hidden>
+<div class="section-head"><div><p class="eyebrow">PUBLIC SOURCES · A CHECKABLE QUESTION</p><h2>售价上升，盈利就会改善吗？</h2></div><span class="tag">公开事实 · 独立研究示例</span></div>
+<p id="public-case-intro" class="muted"></p><p id="public-reviewed" class="hint"></p>
+<p class="ev-rule">从财新公开标题与摘要得到问题 → 查看公司原始披露 → 明确反例与未知。这里的结论是来源核对后的研究示例，不是合成评价器的自动输出，也不包含私人数据优势。</p>
+<div id="public-claims" class="two-grid"></div>
+<article class="card wide"><p class="step-label">可复核事实 · 财期与业务口径</p><h3>每条事实回到原始披露</h3><div id="public-facts"></div></article>
+<article class="card wide"><p class="step-label">时间与来源边界</p><p id="public-time-boundary"></p><div id="public-sources"></div><p id="public-case-boundary" class="hint"></p><button id="public-export" class="secondary">导出公开案例 JSON ↓</button></article>
+</section>
+<section id="research" class="panel" hidden>
 <div class="section-head"><div><p class="eyebrow">HYPOTHESIS → EVIDENCE</p><h2>一次完整的研究循环</h2></div><span class="status">● Mock provider · 本地计算</span></div>
 <div class="work-grid"><aside class="config card"><p class="step-label">01 / 冻结实验条件</p><h3>候选不等于结论</h3><p class="muted">动量 / 均值回归 × 4 个回看窗口。固定零阈值，最多 8 个候选；仅模拟长仓或现金。</p><form id="research-form"><label for="seed">合成路径种子</label><input id="seed" type="number" min="0" max="4294967295" step="1" value="42" required><div class="form-row"><div><label for="fee">每边手续费 <span>bps</span></label><input id="fee" type="number" min="0" max="100" step="0.1" value="5" required></div><div><label for="slippage">每边滑点 <span>bps</span></label><input id="slippage" type="number" min="0" max="100" step="0.1" value="3" required></div></div><p class="hint">1 bps = 0.01%。进入、退出均收费。每段从现金开始并在段末平仓。</p><button class="primary" id="run" type="submit">运行 8 个候选 <span>↗</span></button></form><p class="hint">重复试验仍属开发探索。修改种子或成本不会生成独立的收益证据。</p><div class="rule-box"><strong>固定选择规则</strong><p>训练得分前 3 → 验证段净值增长为正、最大回撤 ≤20% → 验证得分最高者。无合格者选择现金。</p><small>得分 = 净值变化 − 0.5 × 最大回撤</small></div></aside>
 <div class="results"><div class="metric-grid"><article class="card metric"><span>保留段 · 模拟净值变化</span><strong id="return">—</strong><small>已计入手续费与滑点</small></article><article class="card metric"><span>保留段 · 最大回撤</span><strong id="drawdown">—</strong><small>从初始净值 1 开始计量</small></article><article class="card metric"><span>累计模拟成本</span><strong id="cost">—</strong><small>相对段初资金；非投资费用报价</small></article></div>
@@ -199,6 +232,256 @@ function planMarketObservation(request) {
   return {status:'plan-only-unverified',app:request.app,page:request.page,symbol:request.symbol,deviceValidated:false,executionAvailable:false,localObservationOnly:true,stopOn:['personal-data','authentication','unknown-page','ambiguous-target'],allowedIntent:'public-market-navigation',rawScreenRetention:false,uploadAllowed:false};
 }
 
+/** Offline synthetic fixture roots only. No real-world verification is claimed.
+ * Data requests cannot change this registry. Editing this file is a trust-boundary change.
+ */
+const SYNTHETIC_REGISTRY_VERSION = 'synthetic-roots/1';
+const syntheticRoots = Object.freeze([
+  {
+    "originId": "issuer-report",
+    "nodeId": "e509d945e74b545858724b4d113819697e19c59e73450eaf08df7cf89b23598b"
+  },
+  {
+    "originId": "contract-notice",
+    "nodeId": "39407de241bbbd4a0b199d506ef46b08c45de3c3933b602909ef4ca407256ab6"
+  },
+  {
+    "originId": "synthetic-note",
+    "nodeId": "ac694bf88ed61036004087e6c0fb8461c1404619fd58a0995bb17a3090a0389c"
+  },
+  {
+    "originId": "untimed-clipping",
+    "nodeId": "5d3841e15a5770db640630ad0976ba638f8243a8e0f2805f4e75ea93104e2917"
+  },
+  {
+    "originId": "later-correction",
+    "nodeId": "cdc8d42739c8ff39bc846d28e9f139538367512f84c089f1fbebe3d35f0fbaf8"
+  },
+  {
+    "originId": "independent-audit",
+    "nodeId": "729952979889efa033d0035962cdade039f692d26548ec5b9529e75a97375155"
+  }
+].map(Object.freeze));
+function syntheticProvenanceRegistry() {
+  return {version:SYNTHETIC_REGISTRY_VERSION,kind:'synthetic_fixture_registration',roots:structuredClone(syntheticRoots)};
+}
+
+/** Deterministic evidence checks. No model, network, pricing or trading path. */
+
+const EVIDENCE_ENGINE = 'evidence-check/0.2.0';
+const EVIDENCE_STAGES = Object.freeze(['adoption', 'signed', 'accepted', 'recognized_revenue', 'cash_received']);
+const identifier = value => typeof value === 'string' && /^[a-z][a-z0-9_-]{0,79}$/.test(value);
+const nonempty = (value, max = 500) => typeof value === 'string' && value.trim().length > 0 && value.length <= max;
+const hashId = value => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);
+const syntheticLocator = value => value === null || (typeof value === 'string' && /^https:\/\/example\.invalid\/[a-z0-9/_-]+$/.test(value));
+function time(value, nullable = false) {
+  if (nullable && value === null) return;
+  invariant(typeof value === 'string' && /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\.\d{3}Z$/.test(value) &&
+    Number.isFinite(Date.parse(value)) && new Date(value).toISOString() === value, 'Use an exact UTC timestamp or explicit null');
+}
+function period(item) {
+  time(item.periodStart); time(item.periodEnd);
+  invariant(item.periodStart <= item.periodEnd, 'Invalid metric period');
+}
+function metricFields(item) {
+  invariant(identifier(item.entity) && identifier(item.metric) && identifier(item.unit), 'Invalid entity, metric or unit ID');
+  invariant(EVIDENCE_STAGES.includes(item.stage), 'Keep adoption, signing, acceptance, revenue and cash separate');
+  period(item);
+}
+function validateClaim(claim) {
+  exactKeys(claim, ['id','version','confirmation','thesis','entity','metric','stage','periodStart','periodEnd','operator','threshold','unit','falsification']);
+  invariant(identifier(claim.id) && Number.isSafeInteger(claim.version) && claim.version > 0, 'Invalid claim identity/version');
+  invariant(['human_confirmed','ai_candidate'].includes(claim.confirmation), 'Claim must be confirmed by a human or marked as a candidate');
+  invariant(nonempty(claim.thesis) && nonempty(claim.falsification), 'Specify a thesis and falsification condition');
+  metricFields(claim);
+  invariant(claim.operator === 'gte' && Number.isFinite(claim.threshold) && claim.threshold >= 0 && claim.threshold <= 1e12, 'MVP supports a nonnegative, bounded >= metric threshold');
+  return claim;
+}
+function validateEvidenceDataset(data) {
+  exactKeys(data, ['schemaVersion','id','version','kind','sources','observations','provenance']);
+  invariant(data.schemaVersion === 2 && identifier(data.id) && Number.isSafeInteger(data.version) && data.version > 0, 'Require dataset schema 2 and a valid version');
+  invariant(data.kind === 'synthetic', 'This MVP accepts synthetic fixtures only');
+  invariant(Array.isArray(data.sources) && data.sources.length > 0 && data.sources.length <= 100, 'Require 1–100 sources');
+  invariant(Array.isArray(data.observations) && data.observations.length <= 1000, 'At most 1000 evidence records');
+  invariant(Array.isArray(data.provenance) && data.provenance.length <= 300, 'At most 300 provenance nodes');
+  const nodeIds = new Set();
+  for (const node of data.provenance) {
+    exactKeys(node, ['id','kind','parentId','originId','visibility','url']);
+    invariant(hashId(node.id) && !nodeIds.has(node.id), 'Invalid or duplicate provenance node'); nodeIds.add(node.id);
+    invariant(['primary','repost','ai'].includes(node.kind), 'Require an explicit provenance role');
+    invariant(node.parentId === null || hashId(node.parentId), 'Invalid parent hash');
+    invariant(node.originId === null || identifier(node.originId), 'Invalid provenance origin');
+    invariant(['public','private'].includes(node.visibility) && syntheticLocator(node.url), 'Invalid synthetic provenance metadata');
+  }
+  const sources = new Map();
+  for (const source of data.sources) {
+    exactKeys(source, ['id','originId','title','visibility','url','provenanceId']);
+    invariant(identifier(source.id) && identifier(source.originId) && !sources.has(source.id), 'Invalid or duplicate source ID');
+    invariant(nonempty(source.title, 160) && ['public','private'].includes(source.visibility), 'Invalid source description/visibility');
+    // Reserved example.invalid links only: fixtures must not impersonate actual issuers.
+    invariant(syntheticLocator(source.url) && hashId(source.provenanceId), 'Require a synthetic locator and provenance hash');
+    sources.set(source.id, source);
+  }
+  const ids = new Set(), versions = new Set();
+  for (const item of data.observations) {
+    exactKeys(item, ['id','sourceId','sourceVersion','confirmation','entity','metric','stage','periodStart','periodEnd','value','unit','coverage','occurredAt','publishedAt','availableAt','excerpt']);
+    invariant(identifier(item.id) && !ids.has(item.id) && sources.has(item.sourceId), 'Invalid evidence ID or source reference'); ids.add(item.id);
+    invariant(Number.isSafeInteger(item.sourceVersion) && item.sourceVersion > 0, 'Invalid source version');
+    invariant(['human_confirmed','ai_candidate'].includes(item.confirmation), 'Unreviewed extraction must remain an AI candidate');
+    metricFields(item);
+    invariant(item.value === null || (Number.isFinite(item.value) && item.value >= 0 && item.value <= 1e12), 'Unknown values must be null; known values must be bounded numbers');
+    invariant(['complete','lower_bound'].includes(item.coverage) && nonempty(item.excerpt, 1500), 'Record scope and a short synthetic excerpt');
+    for (const key of ['occurredAt','publishedAt','availableAt']) time(item[key], true);
+    if (item.occurredAt !== null && item.publishedAt !== null) invariant(item.occurredAt <= item.publishedAt, 'Publication precedes the observed event');
+    if (item.publishedAt !== null && item.availableAt !== null) invariant(item.publishedAt <= item.availableAt, 'Availability cannot precede publication');
+    if (item.occurredAt !== null) invariant(item.occurredAt >= item.periodEnd, 'A period total cannot be observed before that period ends');
+    const versionKey = [item.sourceId, item.sourceVersion, ...matchKeys.map(key => item[key])].join('|');
+    invariant(!versions.has(versionKey), 'Duplicate metric in one source version'); versions.add(versionKey);
+  }
+  return data;
+}
+const matchKeys = ['entity','metric','stage','periodStart','periodEnd','unit'];
+const matches = (a, b) => matchKeys.every(key => a[key] === b[key]);
+const contradictory = (a,b) => a.coverage === 'complete' && b.coverage === 'complete' ? a.value !== b.value :
+  a.coverage === 'complete' ? a.value < b.value : b.coverage === 'complete' ? b.value < a.value : false;
+
+// Content-addressed parent references detect in-place role/lineage edits. Root pins live
+// outside the request. Neither an origin label nor human confirmation can register roots.
+async function resolveProvenance(dataset, registry) {
+  const nodes = new Map(dataset.provenance.map(node => [node.id,node]));
+  const validHashes = new Set();
+  for (const {id,...body} of dataset.provenance) if (await digest(body) === id) validHashes.add(id);
+  const resolved = new Map();
+  for (const source of dataset.sources) {
+    const chain = [], seen = new Set(); let next = source.provenanceId, reason = null;
+    while (next !== null) {
+      if (seen.has(next)) { reason = 'provenance_cycle'; break; }
+      seen.add(next);
+      const node = nodes.get(next);
+      if (!node) { reason = 'provenance_missing_parent'; break; }
+      chain.push(node); next = node.parentId;
+    }
+    const leaf = chain[0], root = chain.at(-1);
+    if (!reason && chain.some(node => !validHashes.has(node.id))) reason = 'provenance_hash_mismatch';
+    if (!reason && chain.some((node,i) => i < chain.length-1 ? node.kind === 'primary' || node.originId !== null : node.kind !== 'primary')) reason = 'provenance_invalid_parent';
+    if (!reason && !registry.roots.some(pin => pin.nodeId === root.id && pin.originId === root.originId)) reason = 'provenance_unregistered_root';
+    if (!reason && (source.url !== leaf.url || source.visibility !== leaf.visibility)) reason = 'provenance_metadata_mismatch';
+    resolved.set(source.id,{reason,kind:leaf?.kind??null,originId:reason?null:root.originId,
+      chain:chain.map(node=>({id:node.id,kind:node.kind,parentId:node.parentId})),
+      visibility:chain.some(node=>node.visibility==='private')?'private':'public'});
+  }
+  return resolved;
+}
+
+function validateRequest(options) {
+  invariant(options && typeof options === 'object' && !Array.isArray(options), 'Expected a check request');
+  const allowed=['claim','dataset','asOf','visibility','excludedOrigins'];
+  invariant(Object.keys(options).every(key=>allowed.includes(key)) && ['claim','dataset','asOf'].every(key=>Object.hasOwn(options,key)), 'Unknown or missing request fields');
+  invariant(options.excludedOrigins === undefined || Array.isArray(options.excludedOrigins), 'Excluded origins must be an array');
+}
+async function checkEvidence(options) {
+  validateRequest(options);
+  let {claim, dataset, asOf, visibility = 'public', excludedOrigins = []}=options;
+  // Snapshot inputs before the first await: later caller edits cannot change a running check.
+  claim = structuredClone(claim); dataset = structuredClone(dataset); excludedOrigins = [...excludedOrigins];
+  validateClaim(claim); validateEvidenceDataset(dataset); time(asOf);
+  invariant(['public','all'].includes(visibility), 'Visibility must be public or all');
+  const sources = new Map(dataset.sources.map(source => [source.id, source]));
+  const registry = syntheticProvenanceRegistry(), provenance = await resolveProvenance(dataset,registry);
+  const origins = new Set(registry.roots.map(pin => pin.originId));
+  invariant(excludedOrigins.every(id => origins.has(id)) && new Set(excludedOrigins).size === excludedOrigins.length, 'Unknown or duplicate excluded origin');
+  excludedOrigins.sort();
+  const trace = [], usable = [];
+  for (const item of [...dataset.observations].sort((a,b) => a.id.localeCompare(b.id))) {
+    const source = sources.get(item.sourceId);
+    const lineage = provenance.get(source.id);
+    let reason = null;
+    if (lineage.reason) reason = lineage.reason;
+    else if (excludedOrigins.includes(lineage.originId)) reason = 'source_removed';
+    else if (visibility === 'public' && lineage.visibility !== 'public') reason = 'private_source_excluded';
+    else if (!matches(item, claim)) reason = 'different_metric_stage_or_period';
+    else if (item.confirmation !== 'human_confirmed') reason = 'unconfirmed_extraction';
+    else if ([item.occurredAt,item.publishedAt,item.availableAt].some(t => t === null)) reason = 'missing_time';
+    else if ([item.occurredAt,item.publishedAt,item.availableAt].some(t => t > asOf)) reason = 'future_evidence';
+    // Derived prose is always a trace, never primary factual support, even after review.
+    else if (lineage.kind !== 'primary') reason = 'derived_not_independent';
+    const row = {id:item.id, sourceId:item.sourceId, originId:lineage.originId, declaredOriginId:source.originId,
+      provenance:{kind:lineage.kind,verified:!lineage.reason,chain:lineage.chain}, sourceVersion:item.sourceVersion,
+      availableAt:item.availableAt, publishedAt:item.publishedAt, occurredAt:item.occurredAt, reason, included:reason === null,
+      value:item.value, coverage:item.coverage, recordHash:await digest(item)};
+    trace.push(row); if (reason === null) usable.push({item, source, row});
+  }
+  // Select revisions only after as-of filtering. An unavailable correction never erases older knowledge.
+  for (const entry of usable) {
+    if (usable.some(other => other.source.id === entry.source.id && other.item.sourceVersion > entry.item.sourceVersion)) {
+      entry.row.included = false; entry.row.reason = 'superseded_as_of';
+    }
+  }
+  // The root identity is resolved from the pinned chain, never source.originId.
+  for (const entry of usable.filter(x => x.row.included)) {
+    if (usable.some(other => other.row.included && other.row.originId === entry.row.originId && other.item.sourceVersion > entry.item.sourceVersion)) {
+      entry.row.included = false; entry.row.reason = 'superseded_as_of';
+    }
+  }
+  // Keep derived traces informative, but never let a copy supply a missing primary record.
+  for (const row of trace.filter(row=>row.reason==='derived_not_independent')) {
+    const primaries = usable.filter(entry=>entry.row.included && entry.row.originId===row.originId);
+    if (!primaries.length) row.reason = 'missing_primary_evidence';
+    else if (primaries.some(entry=>entry.item.sourceVersion>row.sourceVersion)) row.reason = 'superseded_as_of';
+  }
+  const active = usable.filter(x => x.row.included);
+  const unknown = active.filter(x => x.item.value === null);
+  for (const entry of unknown) entry.row.reason = 'unknown_value';
+  const known = active.filter(x => x.item.value !== null);
+  const conflicts = [];
+  for (let i=0; i<known.length; i++) for (let j=i+1; j<known.length; j++) {
+    if (contradictory(known[i].item, known[j].item)) conflicts.push({evidenceIds:[known[i].item.id,known[j].item.id], reason:'incompatible_measurements'});
+  }
+  const grouped = new Map();
+  for (const entry of active) {
+    if (!grouped.has(entry.row.originId)) grouped.set(entry.row.originId, []);
+    grouped.get(entry.row.originId).push(entry);
+  }
+  const assessments = [...grouped].sort(([a],[b])=>a.localeCompare(b)).map(([originId, entries]) => {
+    const values = entries.map(x=>x.item).filter(x=>x.value!==null);
+    const hasSupport = values.some(x => x.value >= claim.threshold);
+    const hasRefutation = values.some(x => x.coverage === 'complete' && x.value < claim.threshold);
+    return {originId,evidenceIds:entries.map(x=>x.item.id),result:hasSupport && hasRefutation ? 'unknown' : hasSupport ? 'supported' : hasRefutation ? 'refuted' : 'unknown'};
+  });
+  let status = 'unknown', reason = 'insufficient_evidence';
+  if (claim.confirmation !== 'human_confirmed') reason = 'claim_unconfirmed';
+  else if (conflicts.length) reason = 'conflicting_evidence';
+  else if (assessments.some(x=>x.result==='supported')) { status = 'supported'; reason = 'threshold_met'; }
+  else if (assessments.some(x=>x.result==='refuted')) { status = 'refuted'; reason = 'complete_measurement_below_threshold'; }
+  const protocol = {engine:EVIDENCE_ENGINE,registryVersion:registry.version,asOf,visibility,excludedOrigins,
+    decision:'pinned synthetic primary roots only; AI/reposts are trace-only; no-voting; exact metric/period/stage; complete totals required for refutation; conflict means unknown'};
+  const result = {status,reason,conflicts,origins:assessments,uniqueOrigins:assessments.length,
+    supportingOrigins:assessments.filter(x=>x.result==='supported').map(x=>x.originId),
+    refutingOrigins:assessments.filter(x=>x.result==='refuted').map(x=>x.originId),trace};
+  return {schemaVersion:2,kind:'synthetic_evidence_check',engine:EVIDENCE_ENGINE,claim,dataset,registry,protocol,result,
+    hashes:{claim:await digest(claim),dataset:await digest(dataset),registry:await digest(registry),protocol:await digest(protocol),result:await digest(result)},
+    boundary:{causalAttribution:false,alphaValidated:false,returnForecast:false,tradeEligible:false,modelCalled:false,
+      note:'Only registered synthetic primary roots count. Confirmation reviews a claim/extraction; it cannot establish source independence. Hash chains are not proof of real provenance or independent institutions, signatures, external timestamps or tamper-proof storage. Editing files/registry or falsely linking known roots is outside this local verifier trust boundary. No reliable text-based forgery detection is claimed.'}};
+}
+
+async function compareEvidence(options) {
+  validateRequest(options);
+  // Freeze both counterfactual views to the same claim, data and cutoff.
+  const frozen = structuredClone(options);
+  const baseline = await checkEvidence({...frozen, excludedOrigins:[]});
+  const selected = await checkEvidence(frozen);
+  const prior = new Map(baseline.result.trace.map(row => [row.id,row]));
+  const changedEvidence = selected.result.trace.filter(row => {
+    const before = prior.get(row.id); return row.included !== before.included || row.reason !== before.reason;
+  }).map(row=>({id:row.id,before:prior.get(row.id).reason,after:row.reason}));
+  return {baseline,selected,change:{from:baseline.result.status,to:selected.result.status,
+    conclusionChanged:baseline.result.status!==selected.result.status,reasonChanged:baseline.result.reason!==selected.result.reason,
+    removedOrigins:selected.protocol.excludedOrigins,changedEvidence,
+    interpretation:'Source-removal sensitivity under a fixed rule; not a causal effect or return forecast.'}};
+}
+
+const EVIDENCE_EXAMPLE={"claim":{"id":"cloud-revenue-q2","version":1,"confirmation":"human_confirmed","thesis":"合成公司晨岚的项目进展是否已经兑现为第二季度收入？","entity":"synthetic-chenlan","metric":"quarter-total","stage":"recognized_revenue","periodStart":"2026-04-01T00:00:00.000Z","periodEnd":"2026-06-30T23:59:59.999Z","operator":"gte","threshold":100,"unit":"cny-10k","falsification":"完整季度确认收入低于100万元则不成立；只有签约、下界或缺失值时不能否证。"},"dataset":{"schemaVersion":2,"id":"synthetic-source-removal","version":2,"kind":"synthetic","sources":[{"id":"issuer","originId":"issuer-report","title":"合成季度报告（首发）","visibility":"public","url":"https://example.invalid/issuer/q2","provenanceId":"e509d945e74b545858724b4d113819697e19c59e73450eaf08df7cf89b23598b"},{"id":"repost","originId":"issuer-report","title":"同一报告的合成转载","visibility":"public","url":"https://example.invalid/repost/q2","provenanceId":"796d9364f66cd67bfe981017c7da3aa8f6b06da80524773423a0f3e218039a68"},{"id":"contract","originId":"contract-notice","title":"合成签约公告","visibility":"public","url":"https://example.invalid/contract/q2","provenanceId":"39407de241bbbd4a0b199d506ef46b08c45de3c3933b602909ef4ca407256ab6"},{"id":"private-note","originId":"synthetic-note","title":"合成内部核对记录（无真人聊天）","visibility":"private","url":null,"provenanceId":"ac694bf88ed61036004087e6c0fb8461c1404619fd58a0995bb17a3090a0389c"},{"id":"untimed","originId":"untimed-clipping","title":"缺少可得时间的合成摘录","visibility":"public","url":null,"provenanceId":"5d3841e15a5770db640630ad0976ba638f8243a8e0f2805f4e75ea93104e2917"},{"id":"later","originId":"later-correction","title":"观察截止日之后的合成更正","visibility":"public","url":"https://example.invalid/later/q2","provenanceId":"cdc8d42739c8ff39bc846d28e9f139538367512f84c089f1fbebe3d35f0fbaf8"}],"observations":[{"entity":"synthetic-chenlan","metric":"quarter-total","stage":"recognized_revenue","periodStart":"2026-04-01T00:00:00.000Z","periodEnd":"2026-06-30T23:59:59.999Z","unit":"cny-10k","sourceVersion":1,"confirmation":"human_confirmed","coverage":"complete","occurredAt":"2026-06-30T23:59:59.999Z","publishedAt":"2026-07-05T08:00:00.000Z","availableAt":"2026-07-05T08:10:00.000Z","id":"revenue-original","sourceId":"issuer","value":120,"excerpt":"【合成样例】第二季度确认收入合计120万元。"},{"entity":"synthetic-chenlan","metric":"quarter-total","stage":"recognized_revenue","periodStart":"2026-04-01T00:00:00.000Z","periodEnd":"2026-06-30T23:59:59.999Z","unit":"cny-10k","sourceVersion":1,"confirmation":"human_confirmed","coverage":"complete","occurredAt":"2026-06-30T23:59:59.999Z","publishedAt":"2026-07-05T08:00:00.000Z","availableAt":"2026-07-05T08:10:00.000Z","id":"revenue-repost","sourceId":"repost","value":120,"excerpt":"【合成转载】引用季度报告：确认收入120万元。"},{"entity":"synthetic-chenlan","metric":"quarter-total","stage":"signed","periodStart":"2026-04-01T00:00:00.000Z","periodEnd":"2026-06-30T23:59:59.999Z","unit":"cny-10k","sourceVersion":1,"confirmation":"human_confirmed","coverage":"complete","occurredAt":"2026-06-30T23:59:59.999Z","publishedAt":"2026-07-05T08:00:00.000Z","availableAt":"2026-07-05T08:10:00.000Z","id":"contract-amount","sourceId":"contract","value":180,"excerpt":"【合成样例】第二季度签約总额180万元，不代表已确认收入。"},{"entity":"synthetic-chenlan","metric":"quarter-total","stage":"recognized_revenue","periodStart":"2026-04-01T00:00:00.000Z","periodEnd":"2026-06-30T23:59:59.999Z","unit":"cny-10k","sourceVersion":1,"confirmation":"human_confirmed","coverage":"complete","occurredAt":"2026-06-30T23:59:59.999Z","publishedAt":"2026-07-08T08:00:00.000Z","availableAt":"2026-07-08T08:10:00.000Z","id":"revenue-conflict","sourceId":"private-note","value":70,"excerpt":"【合成非公开记录】第二季度完整确认收入合计70万元；与报告口径冲突，尚未核实。"},{"entity":"synthetic-chenlan","metric":"quarter-total","stage":"recognized_revenue","periodStart":"2026-04-01T00:00:00.000Z","periodEnd":"2026-06-30T23:59:59.999Z","unit":"cny-10k","sourceVersion":1,"confirmation":"human_confirmed","coverage":"complete","occurredAt":"2026-06-30T23:59:59.999Z","publishedAt":"2026-07-05T08:00:00.000Z","availableAt":null,"id":"revenue-untimed","sourceId":"untimed","value":150,"excerpt":"【合成摘录】声称收入150万元，但首次可得时间不明。"},{"entity":"synthetic-chenlan","metric":"quarter-total","stage":"recognized_revenue","periodStart":"2026-04-01T00:00:00.000Z","periodEnd":"2026-06-30T23:59:59.999Z","unit":"cny-10k","sourceVersion":1,"confirmation":"human_confirmed","coverage":"complete","occurredAt":"2026-06-30T23:59:59.999Z","publishedAt":"2026-07-15T08:00:00.000Z","availableAt":"2026-07-15T08:10:00.000Z","id":"revenue-future","sourceId":"later","value":80,"excerpt":"【合成更正】7月15日声称季度收入80万元，不能回填到7月10日的判断。"}],"provenance":[{"id":"e509d945e74b545858724b4d113819697e19c59e73450eaf08df7cf89b23598b","kind":"primary","parentId":null,"originId":"issuer-report","visibility":"public","url":"https://example.invalid/issuer/q2"},{"id":"796d9364f66cd67bfe981017c7da3aa8f6b06da80524773423a0f3e218039a68","kind":"repost","parentId":"e509d945e74b545858724b4d113819697e19c59e73450eaf08df7cf89b23598b","originId":null,"visibility":"public","url":"https://example.invalid/repost/q2"},{"id":"39407de241bbbd4a0b199d506ef46b08c45de3c3933b602909ef4ca407256ab6","kind":"primary","parentId":null,"originId":"contract-notice","visibility":"public","url":"https://example.invalid/contract/q2"},{"id":"ac694bf88ed61036004087e6c0fb8461c1404619fd58a0995bb17a3090a0389c","kind":"primary","parentId":null,"originId":"synthetic-note","visibility":"private","url":null},{"id":"5d3841e15a5770db640630ad0976ba638f8243a8e0f2805f4e75ea93104e2917","kind":"primary","parentId":null,"originId":"untimed-clipping","visibility":"public","url":null},{"id":"cdc8d42739c8ff39bc846d28e9f139538367512f84c089f1fbebe3d35f0fbaf8","kind":"primary","parentId":null,"originId":"later-correction","visibility":"public","url":"https://example.invalid/later/q2"},{"id":"729952979889efa033d0035962cdade039f692d26548ec5b9529e75a97375155","kind":"primary","parentId":null,"originId":"independent-audit","visibility":"public","url":"https://example.invalid/independent/q2"}]},"asOf":"2026-07-10T12:00:00.000Z","visibility":"public","excludedOrigins":[]};
+const PUBLIC_RESEARCH_CASE={"schemaVersion":1,"id":"public-phone-pricing-2026-10","version":1,"kind":"public_source_research_case","reviewMode":"source_checked_editorial_example","reviewedAt":"2026-10-12T04:08:05.000Z","title":"售价上升，盈利就会改善吗？","scope":"从公开报道提出问题，回到原始披露检验。这里只判断推论是否充分，不预测股价。","sources":[{"id":"caixin-discovery","role":"discovery_only","title":"财新｜新手机在涨价","url":"https://weekly.caixin.com/2026-10-10/102491890.html","access":"public_abstract_only","publicationDate":"2026-10-10","displayedPublishedTime":"2026-10-10 10:04:59（页面未明确时区）","firstPublicAt":null,"firstPublicTimeBasis":"页面显示的发布时间，未核实首次上线及其时区；不转换成精确 UTC。","observedAt":"2026-10-12T04:08:05.000Z","documentSha256":null,"note":"只使用公开标题和摘要作为问题入口；没有读取或镜像付费全文。它不是手机业务毛利率的一手证据。"},{"id":"xiaomi-interim-2026","role":"primary_company_disclosure","title":"小米集团 2026 中期报告","url":"https://ir.mi.com/static-files/b903a881-8143-44a3-b759-703653bbb043","access":"public_official_pdf","publicationDate":null,"documentDated":"2026-08-18","firstPublicAt":null,"firstPublicTimeBasis":"8月18日为报告落款和财务资料批准日期，不能据此认定该 PDF 首次公开时刻。","observedAt":"2026-10-12T04:08:05.000Z","documentSha256":null,"note":"采用手机业务口径；同一报告多个页面仍是一个一手来源。中期财务资料未经审计、经外部审阅。"},{"id":"micron-fy26-q4","role":"primary_company_disclosure","title":"美光 FY2026 Q4 财报电话会准备稿","url":"https://s25.q4cdn.com/621799436/files/doc_financials/2026/q4/Q4-FY26-Prepared-Remarks.pdf","access":"public_official_pdf","publicationDate":"2026-09-30","documentDated":"2026-09-30","firstPublicAt":null,"firstPublicTimeBasis":"官方材料标注9月30日，仅确认披露日期；未核实这份文件首次上线的精确时刻。","observedAt":"2026-10-12T04:08:05.000Z","documentSha256":null,"note":"公司对合同状态及未来收入、毛利的陈述；不等于所有合同已经履约、确认收入或回款。"}],"facts":[{"id":"xiaomi-asp","sourceId":"xiaomi-interim-2026","kind":"reported_metric","label":"手机 ASP（人民币／部）","baselinePeriod":"2025-01-01/2025-06-30","period":"2026-01-01/2026-06-30","baseline":1141.4,"current":1329.7,"reportedChangePct":16.5,"display":"1,141.4 → 1,329.7（同比 +16.5%）","locator":{"pdfIndex":19,"pdfPage":20,"printedPage":"18","section":"Smartphones"},"qualification":"ASP 是销售组合平均价，不等于同一款手机的价格涨幅。"},{"id":"xiaomi-shipments","sourceId":"xiaomi-interim-2026","kind":"reported_metric","label":"手机出货量（百万部）","baselinePeriod":"2025-01-01/2025-06-30","period":"2026-01-01/2026-06-30","baseline":84.2,"current":65,"reportedChangePct":-22.9,"display":"84.2 → 65.0（报告列示同比 −22.9%）","locator":{"pdfIndex":19,"pdfPage":20,"printedPage":"18","section":"Smartphones"},"qualification":"采用公司披露的同比值；展示数量已四舍五入，不拿其重算值覆盖原披露。"},{"id":"xiaomi-margin","sourceId":"xiaomi-interim-2026","kind":"reported_metric","label":"手机业务毛利率","baselinePeriod":"2025-01-01/2025-06-30","period":"2026-01-01/2026-06-30","baseline":12,"current":9.3,"display":"12.0% → 9.3%（下降 2.7 个百分点）","locator":{"pdfIndex":23,"pdfPage":24,"printedPage":"22","section":"Gross profit and margin by line"},"qualification":"公司将下降主要归因于关键零部件涨价；这是管理层解释，未做因果识别。"},{"id":"micron-sca","sourceId":"micron-fy26-q4","kind":"contract_status_and_management_estimate","label":"战略客户协议（SCA）","period":"截至2026-09-30的陈述；估算覆盖至2030年","summary":"公司称已签26份SCA，估算涉及截至2030年收入的逾35%；约四分之三的这部分预估收入有定价框架，其中多数设价格上下限。分母是预估收入，不是合同份数。","locator":{"pdfIndex":2,"pdfPage":3,"printedPage":null,"section":"Strategic customer agreements update"},"stage":"signed","qualification":"签约与未来收入估算分开，不能当作已确认收入或已回款。"},{"id":"micron-hbm","sourceId":"micron-fy26-q4","kind":"contract_status_and_forward_looking_statement","label":"2027 年 HBM 供货定价","period":"2027自然年供货；2026-09-30披露","summary":"公司称2027自然年绝大部分HBM位元供货已完成协议，价格同比明显提高，并将缩小与传统DRAM的毛利率差距。后者是对未来的陈述。","locator":{"pdfIndex":3,"pdfPage":4,"printedPage":null,"section":"Data center / HBM"},"stage":"signed","qualification":"合同定价与未来毛利改善不是证券超额收益；不能据此认定小米与美光存在已核实的直接交易关系。"}],"claims":[{"id":"price-proves-profit","question":"售价上升是否足以证明终端盈利改善？","status":"refuted","statusLabel":"不足以证明","basis":"counterexample_to_sufficiency","parentEvidenceIds":["xiaomi-asp","xiaomi-shipments","xiaomi-margin"],"scope":"将命题收窄为：小米手机 ASP 上升，是否足以推出该业务同期毛利率改善。","reason":"同一财期中 ASP 上升而毛利率下降，构成对这条充分性推论的反例。它不是9月新品涨价对利润的因果估计，不外推公司净利润或所有终端厂商。","falsification":"若同主体、同期间、同口径出现 ASP 上升但毛利率未改善，就不能保留这条充分性推论。"},{"id":"repricing-alpha","question":"合同重定价时差能否产生超额收益？","status":"unknown","statusLabel":"未知 · 尚待检验","basis":"insufficient_market_evidence","parentEvidenceIds":["micron-sca","micron-hbm"],"scope":"合同条款和重定价时间可提出研究假设，当前没有收益评价。","reason":"缺少当时估值与市场预期、逐合同生效及履约数据，也没有冻结后的收益检验或 price-only 对照／信号增量消融。公司披露只说明其陈述的合同状况，不能证明投资者尚未计价。","falsification":"后续须先冻结时点、标的与基线，并计成本；若样本外增量不成立或信息早已计价，应保留失败结果。此项尚未运行。"}],"timeBoundary":"财期、文件落款、公开日期、首次公开精确时刻和本次核查时刻分别保留。firstPublicAt 未核实就为 null；本案例不作为历史信号输入，不把2026年10月核查到的资料回填至6月财期末。","boundary":{"automatedEvidenceEngineUsed":false,"realSourceImporterImplemented":false,"historicalSignalEligible":false,"priceOnlyAblationRun":false,"alphaValidated":false,"tradeEligible":false,"privateDataUsed":false,"note":"公开来源人工编排的研究示例；AI归纳必须回到所列来源复核。链接可能修订，未保存官方文件不可变快照或其字节哈希。不复刻付费全文，不把公开可读误写为原文可自由再分发。"}};
 const $=id=>document.getElementById(id), percent=n=>(n*100).toFixed(2)+'%';
 const names={momentum:'动量',mean_reversion:'均值回归'},reasons={outside_train_top3:'训练排名未入前 3',nonpositive_validation:'验证段净值未增长',validation_drawdown_limit:'验证段回撤超限',eligible:'通过开发筛选'};
 let report=null,journal=[];
@@ -214,8 +497,134 @@ function renderReport(elapsed){$('return').textContent=percent(report.test.netRe
  const freeze=$('freeze');freeze.replaceChildren();for(const [label,value]of [['冻结时间',report.frozen.frozenAt],['策略 hash',report.frozen.strategyHash],['协议 hash',report.frozen.protocolHash],['数据 hash',report.frozen.dataHash],['前瞻状态',report.evidence.prospectiveStatus]])freeze.append(el('dt',label),el('dd',value));}
 async function run(event){event?.preventDefault();if(journal.length>=20){$('message').textContent='当前浏览器已到 20 次演示预算。保留日志，使用 CLI 继续明确记录开发试验。';return;}$('run').disabled=true;$('message').textContent='正在本地计算全部候选…';const start=performance.now();try{report=await runResearch({seed:Number($('seed').value),costs:{feeBps:Number($('fee').value),slippageBps:Number($('slippage').value)}});journal.push({at:report.createdAt,status:'completed',seed:report.data.seed,protocolHash:report.frozen.protocolHash,strategyHash:report.frozen.strategyHash,selected:report.selected?candidateId(report.selected):'现金基线',netReturn:report.test.netReturn,candidates:report.candidates,evidence:report.evidence});saveJournal();renderReport(performance.now()-start);$('message').textContent='计算完成。全部候选已留档；前瞻验证仍待开始。';}catch(error){journal.push({status:'failed',at:new Date().toISOString(),reason:error.message});saveJournal();$('message').textContent=error.message;}finally{$('run').disabled=false;}}
 function prize(event){event?.preventDefault();try{const tokens=$('prize-weights').value.split(',').map(x=>x.trim());if(tokens.some(x=>!/^\d+$/.test(x)))throw Error('权重必须是逗号分隔的非负整数');const result=allocatePrize(Number($('pool').value),tokens.map(Number));$('prize-total').textContent=`${result.totalAllocated} / ${result.pool} 积分`;$('prize-results').replaceChildren();for(const r of result.rows){const row=el('div','','mini-row');row.append(el('span',`参与者 ${r.participant} · 权重 ${r.weight}`),el('strong',`${r.credits} 积分`));$('prize-results').append(row);}$('message').textContent='固定奖池分配完成，与投资净值无关。';}catch(e){$('message').textContent=e.message;}}
-document.querySelectorAll('[data-tab]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.setAttribute('aria-selected',String(x===button)));document.querySelectorAll('.panel').forEach(x=>x.hidden=x.id!==button.dataset.tab);history.replaceState(null,'','#'+button.dataset.tab);$('message').textContent='';}));
+document.querySelectorAll('[data-tab]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.setAttribute('aria-selected',String(x===button)));document.querySelectorAll('.panel').forEach(x=>x.hidden=x.id!==button.dataset.tab);history.replaceState(null,'','#'+button.dataset.tab);$('message').textContent='';if(button.dataset.tab==='research'&&!report)run();}));
 $('research-form').addEventListener('submit',run);$('prize-form').addEventListener('submit',prize);$('export').addEventListener('click',()=>{if(!report)return;const blob=new Blob([JSON.stringify({...report,browserJournal:journal},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=el('a','');a.href=url;a.download='fanshi-synthetic-experiment.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);});
 $('phone-plan').textContent=JSON.stringify(planMarketObservation({app:'apple-stocks',page:'symbol-chart',symbol:'AAPL',publicOnly:true,personalDataVisible:false,authenticationVisible:false}),null,2);
-renderJournal();prize();run();
+renderJournal();prize();$('message').textContent='';
+
+// EVIDENCE_EXAMPLE is embedded from the reviewed synthetic JSON by build.mjs.
+const evState={input:structuredClone(EVIDENCE_EXAMPLE),report:null,sequence:0,history:[]};
+const evStages={adoption:'采用',signed:'签约',accepted:'验收',recognized_revenue:'确认收入',cash_received:'回款'};
+const evStatus={supported:'成立',refuted:'不成立',unknown:'未知'};
+const evReasons={threshold_met:'已有证据达到人工确认的数值门槛。',complete_measurement_below_threshold:'完整期间总量低于门槛，满足否证条件。',insufficient_evidence:'现有可用证据不足，不能把缺失当成零。',claim_unconfirmed:'命题仍是候选，等待人工确认。',conflicting_evidence:'同一指标、期间和口径存在矛盾证据，尚不能得出结论。',source_removed:'来源及同源转载已删除',private_source_excluded:'当前仅使用公开样例',different_metric_stage_or_period:'指标、阶段、期间或单位不匹配',unconfirmed_extraction:'事实抽取尚未人工确认',missing_time:'可得时间缺失，不能用于该时点判断',future_evidence:'在观察截止时尚不可得',superseded_as_of:'被当时已可得的新版本取代',unknown_value:'数值未知，保留为 null'};
+Object.assign(evReasons,{derived_not_independent:'AI／转载仅供追溯，不作独立事实支持',missing_primary_evidence:'无可用原始证据，转述不能补足',provenance_cycle:'父链循环，根源未知',provenance_missing_parent:'父节点缺失，根源未知',provenance_hash_mismatch:'来源角色或父链与记录哈希不符',provenance_invalid_parent:'父链未终止于原始来源',provenance_unregistered_root:'根源未在合成来源登记中核验',provenance_metadata_mismatch:'来源可见性或定位与父链不符'});
+const evRoles={primary:'原始记录',repost:'转载／转述',ai:'AI 回答'};
+const evFieldIds=['ev-thesis','ev-stage','ev-threshold','ev-start','ev-end'];
+const evDate=value=>value.slice(0,10);
+function evPopulate(){
+  const c=evState.input.claim;$('ev-thesis').value=c.thesis;$('ev-stage').value=c.stage;
+  $('ev-threshold').value=c.threshold;$('ev-start').value=evDate(c.periodStart);$('ev-end').value=evDate(c.periodEnd);
+  $('ev-asof').value=evState.input.asOf.slice(0,16);$('ev-visibility').value=evState.input.visibility;
+}
+function evRuleText(){
+  const threshold=$('ev-threshold').value||'（待填）',stage=evStages[$('ev-stage').value];
+  return `${$('ev-start').value} 至 ${$('ev-end').value}，合成公司该阶段的完整季度总额：${stage} ≥ ${threshold} 万元。否证条件：完整总额 < ${threshold} 万元；只有下界、缺失值、时间不明或矛盾资料时保持未知。`;
+}
+function evInvalidate(){
+  evState.sequence++;evState.report=null;evState.input.claim.confirmation='ai_candidate';
+  $('ev-confirmation').textContent='候选命题 · 尚未人工确认（规则表单，无模型解析）';
+  $('ev-rule').textContent=evRuleText();$('ev-current-status').textContent='未知';$('ev-baseline-status').textContent='—';
+  $('ev-reason').textContent='表单已修改，请确认结构化命题和否证条件后再检查。';
+  $('ev-change').textContent='旧结果已失效，修改尚未运行。';$('ev-export').disabled=true;
+  $('ev-trace').replaceChildren();$('ev-conflicts').replaceChildren();$('ev-hashes').textContent='待新版本确认';
+}
+function evSources(report){
+  const rows=report.selected.result.trace;
+  const roots=[...new Set(rows.map(row=>row.originId).filter(Boolean))];$('ev-sources').replaceChildren();
+  for(const origin of roots){
+    const sourceIds=new Set(rows.filter(row=>row.originId===origin).map(row=>row.sourceId));
+    const copies=evState.input.dataset.sources.filter(s=>sourceIds.has(s.id));
+    const label=el('label','','ev-source');const box=document.createElement('input');box.type='checkbox';box.value=origin;box.checked=!evState.input.excludedOrigins.includes(origin);
+    box.setAttribute('aria-label',`保留${copies[0].title}`);
+    const words=el('span','');words.append(el('strong',copies[0].title),el('small',`${copies[0].visibility==='public'?'公开':'非公开 · 纯合成'} · ${copies.length} 个版本载体 · 1 个来源组`));
+    label.append(box,words);$('ev-sources').append(label);
+    box.addEventListener('change',()=>{evState.input.excludedOrigins=[...$('ev-sources').querySelectorAll('input:not(:checked)')].map(x=>x.value);evRun();});
+  }
+}
+function evRender(report){
+  const b=report.baseline,s=report.selected,r=s.result;
+  evSources(report);
+  $('ev-baseline-status').textContent=evStatus[b.result.status];$('ev-current-status').textContent=evStatus[r.status];
+  $('ev-current-status').dataset.status=r.status;$('ev-reason').textContent=evReasons[r.reason];
+  $('ev-confirmation').textContent=`人工确认的${s.claim.version===1?'合成样例':'命题'} · 命题 v${s.claim.version}`;
+  const removed=report.change.removedOrigins.length;
+  $('ev-change').textContent=removed?`${removed} 个来源组已删除：${evStatus[b.result.status]} → ${evStatus[r.status]}。${report.change.conclusionChanged?'结论随证据变化。':'结论未改变；这不证明被删来源没有价值。'}`:'未删除来源。取消勾选左侧来源，比较同一规则和截止时点的结果。';
+  $('ev-scope').textContent=`${s.protocol.visibility==='public'?'仅公开样例':'全部合成样例'} · 观察截止 ${s.protocol.asOf} · 可用来源组 ${r.uniqueOrigins}（不计票）`;
+  $('ev-conflicts').replaceChildren();
+  for(const conflict of r.conflicts){$('ev-conflicts').append(el('p',`冲突：${conflict.evidenceIds.join(' ↔ ')}。相同期间和口径的数值不兼容。`,'ev-conflict'));}
+  $('ev-trace').replaceChildren();
+  for(const row of r.trace){
+    const fact=s.dataset.observations.find(x=>x.id===row.id),source=s.dataset.sources.find(x=>x.id===row.sourceId);
+    const article=el('article','','ev-evidence'),heading=el('div','','section-head');
+    heading.append(el('strong',source.title),el('span',row.reason?evReasons[row.reason]:'纳入本次判断',row.included?'tag':'hint'));article.append(heading);
+    article.append(el('p',fact.excerpt),el('p',`${evStages[fact.stage]} · ${fact.value===null?'未知':fact.value} 万元 · ${fact.coverage==='complete'?'完整期间总额':'已知下界'} · ${evDate(fact.periodStart)} 至 ${evDate(fact.periodEnd)}`,'muted'));
+    const details=document.createElement('details');details.append(el('summary',`追溯 ${row.id} · 来源 v${row.sourceVersion}`));
+    details.append(el('pre',`来源角色：${evRoles[row.provenance.kind]??'未知'}（人工确认不能改变）\n核验来源组：${row.originId??'未知'}\n输入标签（不作判据）：${row.declaredOriginId}\n合成父链：${row.provenance.verified?'完整且根源已登记':'未通过'}\n${row.provenance.chain.map(node=>`${evRoles[node.kind]} ${node.id} → ${node.parentId??'根节点'}`).join('\n')}\n发生：${row.occurredAt??'未知'}\n发布：${row.publishedAt??'未知'}\n首次可得：${row.availableAt??'未知'}\n定位：${source.url??'合成内置记录，无外链'}\n记录 hash：${row.recordHash}`));article.append(details);$('ev-trace').append(article);
+  }
+  $('ev-hashes').textContent=`引擎 ${s.engine}\n命题 v${s.claim.version} / 数据集 v${s.dataset.version}\n来源登记 ${s.registry.version}\n登记 hash ${s.hashes.registry}\n命题 ${s.hashes.claim}\n数据 ${s.hashes.dataset}\n协议 ${s.hashes.protocol}\n结果 ${s.hashes.result}`;
+  $('ev-export').disabled=false;
+}
+async function evRun(){
+  const seq=++evState.sequence;evState.report=null;$('ev-export').disabled=true;
+  if(evState.input.claim.confirmation!=='human_confirmed'){evInvalidate();return;}
+  try{
+    const report=await compareEvidence(evState.input);if(seq!==evState.sequence)return;
+    evState.report=report;evState.history.push({sequence:evState.history.length+1,status:'completed',report});
+    evRender(report);$('ev-error').textContent='';
+    $('ev-history').textContent=`当前会话已保留 ${evState.history.length} 次检查，包含未知、冲突与失败。刷新会清空；请导出以复核。`;
+  }catch(error){
+    if(seq!==evState.sequence)return;
+    evState.history.push({sequence:evState.history.length+1,status:'failed',code:'invalid_input'});
+    $('ev-current-status').textContent='未知';$('ev-baseline-status').textContent='—';$('ev-reason').textContent='输入校验失败，未接受结果。';
+    $('ev-error').textContent=error.message;$('ev-trace').replaceChildren();$('ev-conflicts').replaceChildren();$('ev-hashes').textContent='未产生新结果';
+  }
+}
+$('ev-form').addEventListener('submit',event=>{
+  event.preventDefault();if(!$('ev-form').reportValidity())return;
+  const c=evState.input.claim;evState.input.claim={...c,version:c.version+1,confirmation:'human_confirmed',
+    thesis:$('ev-thesis').value.trim(),stage:$('ev-stage').value,threshold:Number($('ev-threshold').value),
+    periodStart:$('ev-start').value+'T00:00:00.000Z',periodEnd:$('ev-end').value+'T23:59:59.999Z',falsification:evRuleText()};
+  evRun();
+});
+for(const id of evFieldIds)$(id).addEventListener('input',evInvalidate);
+$('ev-visibility').addEventListener('change',()=>{evState.input.visibility=$('ev-visibility').value;evRun();});
+$('ev-asof').addEventListener('change',()=>{evState.input.asOf=$('ev-asof').value?$('ev-asof').value+':00.000Z':'';evRun();});
+$('ev-reset').addEventListener('click',()=>{evState.input=structuredClone(EVIDENCE_EXAMPLE);evPopulate();$('ev-rule').textContent=evRuleText();evRun();});
+$('ev-export').addEventListener('click',()=>{
+  if(!evState.report)return;
+  const blob=new Blob([JSON.stringify({report:evState.report,sessionChecks:evState.history},null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob),a=el('a','');a.href=url;a.download='jianchao-evidence-check.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);
+});
+evPopulate();$('ev-rule').textContent=evRuleText();evRun();
+
+// An explicitly separate editorial case. Never feed it to the synthetic evidence engine.
+const publicCase=structuredClone(PUBLIC_RESEARCH_CASE);
+function publicLink(source,label=source.title,fragment=''){
+  const link=el('a',label+' ↗');link.href=source.url+fragment;link.target='_blank';link.rel='noopener noreferrer';return link;
+}
+$('public-case-intro').textContent=publicCase.scope;
+for(const claim of publicCase.claims){
+  const card=el('article','','card wide');card.dataset.claim=claim.id;
+  card.append(el('p','研究命题','step-label'),el('h3',claim.question),el('span',claim.statusLabel,'tag'),el('p',claim.scope,'muted'),el('p',claim.reason),el('p','否证／下一步：'+claim.falsification,'hint'));
+  const parents=el('p','证据父节点：'+claim.parentEvidenceIds.join(' · '),'hint');card.append(parents);$('public-claims').append(card);
+}
+for(const fact of publicCase.facts){
+  const card=el('article','','ev-evidence'),source=publicCase.sources.find(s=>s.id===fact.sourceId);
+  card.dataset.fact=fact.id;card.append(el('h3',fact.label),el('p',fact.display??fact.summary),el('p','期间：'+fact.period,'muted'),el('p',fact.qualification,'hint'));
+  const locator=fact.locator;card.append(publicLink(source,`${source.title} · PDF第${locator.pdfPage}页（零索引${locator.pdfIndex}${locator.printedPage?'，印刷页'+locator.printedPage:''}）`,`#page=${locator.pdfPage}`));
+  card.append(el('p',`记录 ${fact.id} → 原始来源 ${fact.sourceId}`,'hint'));$('public-facts').append(card);
+}
+for(const source of publicCase.sources){
+  const card=el('article','','ev-evidence');card.append(publicLink(source),el('p',source.note,'muted'));
+  card.append(el('p',`公开日期：${source.publicationDate??'未核实'}${source.documentDated?'；文件落款：'+source.documentDated:''}；首次公开精确时刻：${source.firstPublicAt??'未知'}`,'hint'),el('p',source.firstPublicTimeBasis,'hint'));
+  $('public-sources').append(card);
+}
+$('public-time-boundary').textContent=publicCase.timeBoundary;
+$('public-reviewed').textContent=`本次核查 ${publicCase.reviewedAt} · 自写摘要 · 未运行收益检验`;
+$('public-case-boundary').textContent=publicCase.boundary.note;
+$('public-export').addEventListener('click',async()=>{
+  const report={case:publicCase,caseHash:await digest(publicCase),hashMeaning:'Fingerprint of this local case JSON, not a hash/signature of the official documents.'};
+  const blob=new Blob([JSON.stringify(report,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=el('a','');
+  a.href=url;a.download='jianchao-public-phone-pricing.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);
+});
 </script></body></html>

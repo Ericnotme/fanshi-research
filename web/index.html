@@ -3,10 +3,39 @@
 <body>
 <header><a class="brand" href="#research"><span class="brand-mark" aria-hidden="true">见</span><span>STRATEGY LAB<small>开源量化研究与模拟助手</small></span></a><nav><a href="https://github.com/Ericnotme/fanshi-research">GitHub ↗</a><a id="source-link" href="./fanshi-research-source.zip" download>源码 ↓</a></nav></header>
 <main>
-<section class="hero"><div><p class="eyebrow"><span class="dot"></span> RESEARCH BEFORE CONVICTION</p><h1>让投资观点，<br>先经得起<span>检验。</span></h1><p class="intro">从一个可核验的假设开始。计入成本，检查回撤，冻结规则，<br class="desktop">再等待真实世界给出答案。</p></div><aside class="hero-note"><div class="mono">EXPERIMENT / 001</div><p>观点 → 假设 → 检验<br>冻结 → 模拟追踪</p><span class="tag">离线合成演示</span><small>目标是降低研究与验证的成本。<br>真实投资表现与节时效果尚未验证。</small></aside></section>
-<div class="notice"><strong>合成数据 · 非投资建议</strong><span>所有曲线都来自可复现的人工价格路径，不代表现实可交易结果。“见潮”仅为项目名称，不代表保本或收益承诺。</span></div>
-<div class="tabs" role="tablist" aria-label="见潮页面"><button role="tab" aria-selected="true" data-tab="research">01 研究工作台</button><button role="tab" aria-selected="false" data-tab="journal">02 实验日志</button><button role="tab" aria-selected="false" data-tab="prize">03 固定奖池</button><button role="tab" aria-selected="false" data-tab="boundaries">04 能力边界</button></div>
-<section id="research" class="panel">
+<section class="hero"><div><p class="eyebrow"><span class="dot"></span> RESEARCH BEFORE CONVICTION</p><h1>删掉这条消息，<br>你的投资结论<span>还成立吗？</span></h1><p class="intro">先说清命题、指标、期限和否证条件。再关掉一个来源，<br class="desktop">看看结论为什么改变，以及什么仍然不知道。</p></div><aside class="hero-note"><div class="mono">EXPERIMENT / 001</div><p>命题 → 证据 → 检查<br>删减 → 解释 → 复核</p><span class="tag">离线合成演示</span><small>目标是降低研究与验证的成本。<br>真实投资表现与节时效果尚未验证。</small></aside></section>
+<div class="notice"><strong>可复核研究 · 非投资建议</strong><span>来源删减与策略实验使用合成数据；公开研究示例单独引用原始披露，不参与模拟收益计算。“见潮”仅为项目名称，不代表保本或收益承诺。</span></div>
+<div class="tabs" role="tablist" aria-label="见潮页面"><button role="tab" aria-selected="true" data-tab="evidence">00 来源删减检查</button><button role="tab" aria-selected="false" data-tab="public-research">公开研究示例</button><button role="tab" aria-selected="false" data-tab="research">01 合成策略实验</button><button role="tab" aria-selected="false" data-tab="journal">02 实验日志</button><button role="tab" aria-selected="false" data-tab="prize">03 固定奖池</button><button role="tab" aria-selected="false" data-tab="boundaries">04 能力边界</button></div>
+<section id="evidence" class="panel">
+<div class="section-head"><div><p class="eyebrow">ONE CLAIM · TRACEABLE EVIDENCE</p><h2>把结论拆成能复核的一步</h2></div><span class="tag">纯合成样例 · 无需账号或密钥</span></div>
+<p class="muted">本页检查一个人工确认的数值命题。来源删减反映结论对资料的依赖，不是严格因果归因，也不预测收益或证明 alpha。示例公司、消息及非公开记录全部虚构。</p>
+<div class="ev-layout"><div>
+<article class="card"><p class="step-label">01 / 明确命题</p><form id="ev-form">
+<label for="ev-thesis">你的投资论点</label><textarea id="ev-thesis" maxlength="500" rows="3" required></textarea>
+<p class="hint">文字不会自动变成事实。请用下方规则表达它，并由你确认；首版只演示内置合成公司及季度总额，未连接模型解析。</p>
+<label for="ev-stage">分开检验的业务阶段</label><select id="ev-stage"><option value="adoption">采用</option><option value="signed">签约</option><option value="accepted">验收</option><option value="recognized_revenue">确认收入</option><option value="cash_received">回款</option></select>
+<div class="form-row"><div><label for="ev-start">期间开始（UTC）</label><input id="ev-start" type="date" required></div><div><label for="ev-end">截止期限（UTC）</label><input id="ev-end" type="date" required></div></div>
+<label for="ev-threshold">合成公司季度总额 ≥（万元）</label><input id="ev-threshold" type="number" min="0" max="1000000000000" step="any" required>
+<p class="ev-rule" id="ev-rule"></p><p class="hint" id="ev-confirmation"></p>
+<button class="primary" id="ev-confirm" type="submit">我确认这个命题和否证条件，开始检查</button></form><button class="secondary" id="ev-reset">恢复合成样例</button></article>
+<article class="card wide"><p class="step-label">02 / 改变资料范围</p><label for="ev-visibility">哪些来源参与判断</label><select id="ev-visibility"><option value="public">仅公开样例</option><option value="all">全部合成样例（含非公开模拟记录）</option></select>
+<label for="ev-asof">当时能知道什么：观察截止（UTC）</label><input id="ev-asof" type="datetime-local" step="60" required>
+<p class="hint">取消勾选即删除已核验合成根源及其转述。AI／转载仅供追溯；人工确认不能使它们成为独立支持。时间缺失、父链断裂或根源未登记时排除。合成登记和哈希不证明真实世界来源可信。</p><div id="ev-sources"></div></article>
+</div><div>
+<article class="card ev-result" aria-live="polite"><p class="step-label">03 / 同一命题、同一时点的对照</p><div class="ev-result-grid"><div><span>当前范围 · 删除前</span><strong id="ev-baseline-status">—</strong></div><div><span>当前范围 · 删除后</span><strong id="ev-current-status">未知</strong></div></div><p id="ev-reason"></p><p class="muted" id="ev-change"></p><p class="hint" id="ev-scope"></p><div id="ev-conflicts"></div><p class="hint">“成立”仅表示当前纳入证据满足这条人工规则；不等于证据已被外部核实或投资会获利。未知不会被填为 0。</p><button class="secondary" id="ev-export" disabled>导出复核包 JSON ↓</button><p class="hint" id="ev-history"></p></article>
+<article class="card wide"><p class="step-label">04 / 逐条追溯</p><h3>被使用和被排除的资料都留下来</h3><div id="ev-trace"></div></article>
+<details class="card wide"><summary>查看版本与输入、规则、结果指纹</summary><pre id="ev-hashes"></pre><p class="hint">本地 hash 用于复现和检查一致性，不是第三方时间戳。更正只从当时首次可得的时点生效。</p></details>
+</div></div><p id="ev-error" role="alert"></p>
+</section>
+<section id="public-research" class="panel" hidden>
+<div class="section-head"><div><p class="eyebrow">PUBLIC SOURCES · A CHECKABLE QUESTION</p><h2>售价上升，盈利就会改善吗？</h2></div><span class="tag">公开事实 · 独立研究示例</span></div>
+<p id="public-case-intro" class="muted"></p><p id="public-reviewed" class="hint"></p>
+<p class="ev-rule">从财新公开标题与摘要得到问题 → 查看公司原始披露 → 明确反例与未知。这里的结论是来源核对后的研究示例，不是合成评价器的自动输出，也不包含私人数据优势。</p>
+<div id="public-claims" class="two-grid"></div>
+<article class="card wide"><p class="step-label">可复核事实 · 财期与业务口径</p><h3>每条事实回到原始披露</h3><div id="public-facts"></div></article>
+<article class="card wide"><p class="step-label">时间与来源边界</p><p id="public-time-boundary"></p><div id="public-sources"></div><p id="public-case-boundary" class="hint"></p><button id="public-export" class="secondary">导出公开案例 JSON ↓</button></article>
+</section>
+<section id="research" class="panel" hidden>
 <div class="section-head"><div><p class="eyebrow">HYPOTHESIS → EVIDENCE</p><h2>一次完整的研究循环</h2></div><span class="status">● Mock provider · 本地计算</span></div>
 <div class="work-grid"><aside class="config card"><p class="step-label">01 / 冻结实验条件</p><h3>候选不等于结论</h3><p class="muted">动量 / 均值回归 × 4 个回看窗口。固定零阈值，最多 8 个候选；仅模拟长仓或现金。</p><form id="research-form"><label for="seed">合成路径种子</label><input id="seed" type="number" min="0" max="4294967295" step="1" value="42" required><div class="form-row"><div><label for="fee">每边手续费 <span>bps</span></label><input id="fee" type="number" min="0" max="100" step="0.1" value="5" required></div><div><label for="slippage">每边滑点 <span>bps</span></label><input id="slippage" type="number" min="0" max="100" step="0.1" value="3" required></div></div><p class="hint">1 bps = 0.01%。进入、退出均收费。每段从现金开始并在段末平仓。</p><button class="primary" id="run" type="submit">运行 8 个候选 <span>↗</span></button></form><p class="hint">重复试验仍属开发探索。修改种子或成本不会生成独立的收益证据。</p><div class="rule-box"><strong>固定选择规则</strong><p>训练得分前 3 → 验证段净值增长为正、最大回撤 ≤20% → 验证得分最高者。无合格者选择现金。</p><small>得分 = 净值变化 − 0.5 × 最大回撤</small></div></aside>
 <div class="results"><div class="metric-grid"><article class="card metric"><span>保留段 · 模拟净值变化</span><strong id="return">—</strong><small>已计入手续费与滑点</small></article><article class="card metric"><span>保留段 · 最大回撤</span><strong id="drawdown">—</strong><small>从初始净值 1 开始计量</small></article><article class="card metric"><span>累计模拟成本</span><strong id="cost">—</strong><small>相对段初资金；非投资费用报价</small></article></div>
