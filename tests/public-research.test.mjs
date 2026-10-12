@@ -22,6 +22,12 @@ test('every claim links through unique fact IDs to a primary document and unambi
     assert.equal(fact.locator.pdfPage,fact.locator.pdfIndex+1);
   }
   assert.equal(new Set(caseFile.facts.filter(f=>f.id.startsWith('xiaomi-')).map(f=>f.sourceId)).size,1);
+  for(const fact of caseFile.facts.filter(f=>f.sourceId==='xiaomi-interim-2026')){
+    assert.equal(fact.locator.printedPage,null,'Do not present unverified printed pagination');
+    assert.equal(fact.locator.section,fact.id==='xiaomi-margin'
+      ?'Management Discussion and Analysis → Gross Profit and Margin → Smartphone × AIoT'
+      :'Management Discussion and Analysis → Revenue / Smartphones');
+  }
   assert.equal(sources.get('caixin-discovery').access,'public_abstract_only');
 });
 

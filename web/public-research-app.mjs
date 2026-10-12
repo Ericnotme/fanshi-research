@@ -13,6 +13,7 @@ for(const fact of publicCase.facts){
   const card=el('article','','ev-evidence'),source=publicCase.sources.find(s=>s.id===fact.sourceId);
   card.dataset.fact=fact.id;card.append(el('h3',fact.label),el('p',fact.display??fact.summary),el('p','期间：'+fact.period,'muted'),el('p',fact.qualification,'hint'));
   const locator=fact.locator;card.append(publicLink(source,`${source.title} · PDF第${locator.pdfPage}页（零索引${locator.pdfIndex}${locator.printedPage?'，印刷页'+locator.printedPage:''}）`,`#page=${locator.pdfPage}`));
+  card.append(el('p',`章节定位：${locator.section}`,'hint'));
   card.append(el('p',`记录 ${fact.id} → 原始来源 ${fact.sourceId}`,'hint'));$('public-facts').append(card);
 }
 for(const source of publicCase.sources){

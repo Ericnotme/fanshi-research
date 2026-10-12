@@ -63,7 +63,7 @@
       "current": 1329.7,
       "reportedChangePct": 16.5,
       "display": "1,141.4 → 1,329.7（同比 +16.5%）",
-      "locator": {"pdfIndex": 19, "pdfPage": 20, "printedPage": "18", "section": "Smartphones"},
+      "locator": {"pdfIndex": 19, "pdfPage": 20, "printedPage": null, "section": "Management Discussion and Analysis → Revenue / Smartphones"},
       "qualification": "ASP 是销售组合平均价，不等于同一款手机的价格涨幅。"
     },
     {
@@ -77,7 +77,7 @@
       "current": 65.0,
       "reportedChangePct": -22.9,
       "display": "84.2 → 65.0（报告列示同比 −22.9%）",
-      "locator": {"pdfIndex": 19, "pdfPage": 20, "printedPage": "18", "section": "Smartphones"},
+      "locator": {"pdfIndex": 19, "pdfPage": 20, "printedPage": null, "section": "Management Discussion and Analysis → Revenue / Smartphones"},
       "qualification": "采用公司披露的同比值；展示数量已四舍五入，不拿其重算值覆盖原披露。"
     },
     {
@@ -90,7 +90,7 @@
       "baseline": 12.0,
       "current": 9.3,
       "display": "12.0% → 9.3%（下降 2.7 个百分点）",
-      "locator": {"pdfIndex": 23, "pdfPage": 24, "printedPage": "22", "section": "Gross profit and margin by line"},
+      "locator": {"pdfIndex": 23, "pdfPage": 24, "printedPage": null, "section": "Management Discussion and Analysis → Gross Profit and Margin → Smartphone × AIoT"},
       "qualification": "公司将下降主要归因于关键零部件涨价；这是管理层解释，未做因果识别。"
     },
     {
