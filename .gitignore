@@ -9,3 +9,12 @@ runtime/
 evidence/
 *.tar.gz
 dist/*.zip
+
+__pycache__/
+*.pyc
+private/
+raw/
+research-candidate*/
+datasets/**/*.csv
+datasets/**/integrity.json
+datasets/**/pnl-summary.json

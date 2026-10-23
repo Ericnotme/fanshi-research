@@ -55,5 +55,16 @@
   ".agents/skills/preserve-source-meaning/SKILL.md",
   ".agents/skills/preserve-source-meaning/references/test-cases.md",
   ".agents/skills/verify-human-entry/SKILL.md",
-  ".agents/skills/verify-human-entry/references/test-cases.md"
+  ".agents/skills/verify-human-entry/references/test-cases.md",
+  "scripts/prepare_fanbao.py",
+  "scripts/reconcile_fanbao.py",
+  "scripts/normalize_fanbao_xlsx.py",
+  "tests/test_fanbao.py",
+  "tests/test_fanbao_income.py",
+  "docs/research/fanbao-perturbation-preregistration.md",
+  "datasets/fanbao-usdm/DATA_CARD.md",
+  "datasets/fanbao-usdm/FIELDS.md",
+  "datasets/fanbao-usdm/LICENSE-DATA.md",
+  "datasets/fanbao-usdm/README.md",
+  "datasets/fanbao-usdm/VALIDATION.md"
 ]

@@ -19,3 +19,7 @@ Browser storage is local, mutable and limited to synthetic experiment metadata. 
 Publish only paths in `PUBLIC_FILES.json`. Runtime logs, private files, credentials, screenshots of personal pages, local config, raw research data and Git history from other projects must never be copied. The included scanner is a useful pattern check, not a guarantee of privacy or a security certification.
 
 Use GitHub issues for non-sensitive reproducible bugs. Do not paste credentials, personal financial data or device identifiers into issues.
+
+## Owner-authorized research preparation
+
+The separate `datasets/fanbao-usdm` directory contains preparation documents for an explicitly owner-authorized de-identified trading dataset. Raw exports, true account/trade/order/transaction identifiers, mappings, balances, transfers, contact details, credentials and other accounts remain local. The scripts have no network or brokerage capabilities. Candidate CSV files stay outside Git until a data license is selected and a reviewed release allowlist includes them. MIT applies to code and authored documentation, not automatically to transaction data or third-party market data. Exact execution trajectories remain linkable; de-identification is not anonymity. This exception does not change the synthetic application or authorize real-data ingestion there.
